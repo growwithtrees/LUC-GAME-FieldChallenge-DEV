@@ -25,34 +25,37 @@
     + '</svg>';
 
   var SHELL =
-      '<div class="app">'
-    + '<section class="screen" id="quest">'
-    + '<div class="brandbar"><svg class="ic"><use href="#ic-grass"/></svg> Grow With Trees</div>'
-    + '<div class="qhead"><span class="team" id="qteam"></span></div>'
-    + '<div class="dots" id="dots"></div>'
+      '<div class="topbar">'
+    + '<div class="tb-slot tb-left"><span class="team-badge" id="teamBadge"></span></div>'
+    + '<a class="tb-logo"><svg class="ic"><use href="#ic-grass"/></svg><span>Grow With Trees</span></a>'
+    + '<div class="tb-slot tb-right"><span class="stepcount" id="stepCount"></span></div>'
+    + '</div>'
+    + '<main class="module-shell">'
+    + '<section id="quest">'
+    + '<div class="progress"><div class="progress-fill" id="pfill"></div></div>'
     + '<div id="stopmount"></div>'
     + '</section>'
-    + '<section class="screen" id="finale">'
-    + '<div class="finale-inner">'
-    + '<div class="chesticn"><svg class="ic"><use href="#ic-chest"/></svg></div>'
+    + '<section id="finale" style="display:none">'
+    + '<div class="finale-card">'
+    + '<div class="trophy"><svg class="ic"><use href="#ic-trophy"/></svg></div>'
     + '<h2>All six stops cleared</h2>'
     + '<p class="sub">You just used every part of the app a Liberty crew works with in the field. Here is your box number.</p>'
-    + '<div class="fragbox">'
+    + '<div class="fragwrap">'
     + '<p class="fraglabel">Your team\'s fragment</p>'
     + '<div class="fragnum" id="fragnum">--</div>'
     + '<div class="boxtag" id="boxtag"></div>'
-    + '<div class="combine-steps">'
-    + '<div class="cstep"><span class="n">1</span><span>Take this number to a <b id="boxcolor2">--</b> prize box.</span></div>'
-    + '<div class="cstep"><span class="n">2</span><span>Find <b>another team with the same box color</b>.</span></div>'
-    + '<div class="cstep"><span class="n">3</span><span>Put your two numbers together into the <b>4-digit combo</b> (your number goes first) and open the box.</span></div>'
     + '</div>'
-    + '<div class="prize"><svg class="ic"><use href="#ic-trophy"/></svg> Buttons, stickers, and candy inside</div>'
-    + '</div>'
+    + '<ol class="reminders">'
+    + '<li>Take this number to a <b id="boxcolor2">--</b> prize box.</li>'
+    + '<li>Find <b>another team with the same box color.</b></li>'
+    + '<li>Put your two numbers together into the <b>4-digit combo</b> (your number goes first) and open the box.</li>'
+    + '</ol>'
+    + '<p class="prize"><svg class="ic"><use href="#ic-trophy"/></svg> Buttons, stickers, and candy inside</p>'
     + '<div class="restart"><button id="restartBtn">start over</button></div>'
     + '</div>'
     + '</section>'
-    + '</div>'
-    + '<div class="flash" id="flash"><svg class="ic"><use href="#ic-open-chest"/></svg><div class="word">Unlocked</div></div>';
+    + '</main>'
+    + '<div class="toast" id="toast"><svg class="ic"><use href="#ic-open-chest"/></svg> Unlocked</div>';
 
   function buildStops(team) {
     var t = TEAMS[team];
@@ -60,7 +63,7 @@
       {
         icon: "ic-talk", feat: "Messages", title: "Radio the crew lead",
         body: "Open the Let Grow app and tap <b>Messages</b>. Find <b>" + t.trainer + "</b> in your list and send exactly this:"
-          + "<span class='send'>" + team.toUpperCase() + " CHECKING IN</span>"
+          + "<div class='sendblock'><div class='lbl'>Send this message</div><div class='msg'>" + team.toUpperCase() + " CHECKING IN</div></div>"
           + t.trainer + " will message you back a trail word. Type it in below.",
         accept: [t.word],
         hintBad: "That is not the word " + t.trainer + " sent. Open Messages and check the reply.",
@@ -127,75 +130,72 @@
   function load(team) { try { var r = localStorage.getItem(keyFor(team)); return r ? JSON.parse(r) : null; } catch (e) { return null; } }
 
   function show(id) {
-    ["quest", "finale"].forEach(function (s) { var el = $("#" + s); if (el) el.classList.toggle("on", s === id); });
+    var q = document.getElementById("quest"), f = document.getElementById("finale");
+    if (q) q.style.display = id === "quest" ? "block" : "none";
+    if (f) f.style.display = id === "finale" ? "block" : "none";
     window.scrollTo(0, 0);
   }
 
   function renderQuest() {
     var t = TEAMS[state.team];
-    $("#qteam").innerHTML = "<span class='swatch " + t.color + "'></span>Team " + state.team;
-    var dots = $("#dots"); dots.innerHTML = "";
-    for (var i = 0; i < state.stops.length; i++) {
-      var d = document.createElement("span");
-      d.className = "d" + (i < state.stop ? " done" : "") + (i === state.stop ? " cur" : "");
-      dots.appendChild(d);
-    }
+    document.getElementById("teamBadge").innerHTML = "<span class='sw " + t.color + "'></span>Team " + state.team;
+    document.getElementById("stepCount").textContent = (state.stop + 1) + " / " + state.stops.length;
+    document.getElementById("pfill").style.width = Math.round(state.stop / state.stops.length * 100) + "%";
     renderStop();
   }
 
   function renderStop() {
     var s = state.stops[state.stop];
-    var m = $("#stopmount");
-    var html = "<div class='stopcard'>"
-      + "<div class='stop-icn'><svg class='ic'><use href='#" + s.icon + "'/></svg></div>"
-      + "<p class='stop-feat'>Stop " + (state.stop + 1) + " of " + state.stops.length + " · " + s.feat + "</p>"
+    var html = "<header><span class='eyebrow'><svg class='ic'><use href='#" + s.icon + "'/></svg>" + s.feat + "</span></header>"
+      + "<div class='card brand-bar'>"
       + "<h2>" + s.title + "</h2>"
       + "<div class='body'>" + s.body + "</div>";
     if (s.confirm) {
-      html += "<button class='btn-confirm' id='confirmBtn'>" + s.confirmLabel + "</button>";
+      html += "<div class='answer'><button class='btn btn-primary btn-block' id='confirmBtn'>" + s.confirmLabel + "</button></div>";
     } else {
       html += "<div class='answer'>"
         + "<label for='codein'>Enter the code</label>"
-        + "<div class='inrow'>"
         + "<input id='codein' autocomplete='off' autocapitalize='characters' spellcheck='false' placeholder='type it here'>"
-        + "<button class='btn-go' id='goBtn'>Unlock</button>"
-        + "</div>"
-        + "<div class='hint' id='hint'></div>"
+        + "<button class='btn btn-primary btn-block' id='goBtn'>Unlock</button>"
+        + "<div class='callout danger hidden' id='hint'></div>"
         + "<button class='hintlink' id='hintlink'>Stuck? Show a hint</button>"
-        + "<div class='hint-extra' id='hintextra'>" + (s.hintExtra || "") + "</div>"
+        + "<div class='callout hidden' id='hintextra'>" + (s.hintExtra || "") + "</div>"
         + "</div>";
     }
     html += "</div>";
-    m.innerHTML = html;
+    document.getElementById("stopmount").innerHTML = html;
 
     if (s.confirm) {
-      $("#confirmBtn").addEventListener("click", advance);
+      document.getElementById("confirmBtn").addEventListener("click", advance);
     } else {
-      var input = $("#codein");
-      $("#goBtn").addEventListener("click", check);
+      var input = document.getElementById("codein");
+      document.getElementById("goBtn").addEventListener("click", check);
       input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
-      $("#hintlink").addEventListener("click", function () { $("#hintextra").classList.add("show"); this.style.display = "none"; });
+      document.getElementById("hintlink").addEventListener("click", function () {
+        document.getElementById("hintextra").classList.remove("hidden"); this.style.display = "none";
+      });
       input.focus();
     }
   }
 
   function check() {
     var s = state.stops[state.stop];
-    var input = $("#codein");
+    var input = document.getElementById("codein");
     var val = norm(input.value);
     if (!val) return;
     var ok = s.accept.some(function (a) { return val.indexOf(norm(a)) !== -1; });
-    if (ok) { flashThen(advance); }
+    if (ok) { toastThen(advance); }
     else {
       input.classList.remove("wrong"); void input.offsetWidth; input.classList.add("wrong");
-      $("#hint").innerHTML = "<span class='msg-bad'>" + s.hintBad + "</span>";
+      var h = document.getElementById("hint");
+      h.innerHTML = s.hintBad; h.classList.remove("hidden");
       input.select();
     }
   }
 
-  function flashThen(fn) {
-    var f = $("#flash"); f.classList.add("on");
-    setTimeout(function () { f.classList.remove("on"); fn(); }, 780);
+  function toastThen(fn) {
+    var el = document.getElementById("toast"); el.classList.add("show");
+    setTimeout(function () { el.classList.remove("show"); fn(); }, 640);
   }
 
   function advance() {
@@ -206,14 +206,17 @@
 
   function renderFinale() {
     var t = TEAMS[state.team];
-    $("#fragnum").textContent = t.frag;
-    $("#boxtag").innerHTML = "<span class='sw " + t.color + "'></span>" + t.color + " box";
-    $("#boxcolor2").textContent = t.color;
+    document.getElementById("teamBadge").innerHTML = "<span class='sw " + t.color + "'></span>Team " + state.team;
+    document.getElementById("stepCount").textContent = state.stops.length + " / " + state.stops.length;
+    document.getElementById("pfill").style.width = "100%";
+    document.getElementById("fragnum").textContent = t.frag;
+    document.getElementById("boxtag").innerHTML = "<span class='sw " + t.color + "'></span>" + t.color + " box";
+    document.getElementById("boxcolor2").textContent = t.color;
   }
 
   function fail(msg) {
-    document.body.innerHTML = "<div style='max-width:520px;margin:60px auto;padding:24px;font-family:sans-serif;color:#4B5A50'>"
-      + "<h2 style='color:#B4442E'>Unknown team</h2><p>" + msg + "</p></div>";
+    document.body.innerHTML = "<div style='max-width:520px;margin:60px auto;padding:24px;color:#4b5563'>"
+      + "<h2 style='color:#b91c1c'>Unknown team</h2><p>" + msg + "</p></div>";
   }
 
   function init() {
