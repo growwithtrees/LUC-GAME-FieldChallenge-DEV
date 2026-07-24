@@ -23,10 +23,10 @@ Red box combo: 4712 (Sumac then Elderberry). Green box combo: 5836 (Bluestem the
 
 1. **Messages** — message a trainer, they reply a trail word
 2. **Field Guide / Search** — key out coralberry / buckbrush from a description
-3. **Plant Identify / Scan** — scan it on the plant wall, read the hidden Field Code (`SONGBIRD`)
-4. **Tutorial Video** — Johnny names the incompatible tree to treat (Eastern redcedar)
+3. **Plant Identify / Scan** — filter the wall by a trait (wetland shrub), scan it, and read a real data point from its entry (Buttonbush max height = 12 ft). Uses existing app content, no planted code.
+4. **Field Clips** — the clip names the incompatible tree to treat (Eastern redcedar)
 5. **ChatTrain** — reassure Mrs. Webb, earn the pass phrase (`COMPATIBLE COVER`)
-6. **FieldBite** — log an observation, then reveal the box fragment
+6. **Field Bites** — finish the microlearning, enter the keyword from its last card, then reveal the box fragment
 
 Progress is saved per team in `localStorage`, so a refresh or dropped signal keeps their place.
 
@@ -37,6 +37,6 @@ Edit the `TEAMS` object in `app.js` (name, slug, box color, trainer, reply word,
 ## Notes / open items before the event
 
 - The **Johnny redcedar clip** must exist and be uploaded to Tutorial Videos.
-- The **app content** (coralberry field-guide entry with the `SONGBIRD` field code, the Mrs. Webb ChatTrain flow, the FieldBite survey) must be built in the correct LUC deployment.
+- The **app content** (the Mrs. Webb ChatTrain flow, a Field Bites microlearning on compatible right-of-way plants) must be built in the correct LUC deployment. Stop 3 needs no build: it reads existing entry data (make sure Buttonbush + a couple of incompatible trees are on the printed wall, and Buttonbush is the only wetland plant among them so the trait clue is unique).
 - **Trainer names** (Dale, Gary, Rhonda, Sue) are placeholders — swap for the real train-the-trainer people.
 - Answers are matched case- and punctuation-insensitively and accept common variants.

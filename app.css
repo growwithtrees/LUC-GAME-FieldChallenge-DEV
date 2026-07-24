@@ -159,7 +159,8 @@ button { font-family: inherit; cursor: pointer; }
 .answer input:focus { outline: none; border-color: var(--brand-purple); background: #fff; }
 .answer input.wrong { border-color: var(--danger); animation: shake .4s; }
 
-.hintlink { background: none; border: none; color: var(--muted); font-size: 0.85rem; text-decoration: underline; padding: 12px 0 0; display: block; }
+.wrongmsg { margin-top: 12px; font-size: 0.9rem; font-weight: 600; color: var(--danger); }
+.wrongmsg.hidden { display: none; }
 
 /* callouts (engine style) */
 .callout { border-radius: var(--r-md); padding: 12px 15px; margin-top: 14px; font-size: 0.93rem; line-height: 1.5; border-left: 4px solid var(--brand-purple); background: var(--brand-purple-tint); color: var(--ink-soft); }
@@ -169,14 +170,15 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ─── Finale (engine scenario-complete style) ───────────── */
 .finale-card {
-  background: linear-gradient(135deg, var(--success-soft), #fff);
-  border: 1px solid var(--brand-cyan); border-radius: var(--r-lg);
-  padding: 30px 24px; text-align: center;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm); text-align: center;
 }
-.finale-card .trophy { font-size: 56px; color: var(--brand-purple); line-height: 1; margin-bottom: 8px; }
-.finale-card h2 { color: var(--brand-purple-deep); margin: 0 0 6px; }
-.finale-card .sub { color: var(--ink-soft); font-size: 0.98rem; margin: 0 auto 22px; max-width: 34ch; }
-.fragwrap { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px; box-shadow: var(--shadow-sm); }
+.finale-head { background: var(--brand-gradient-hero); color: #fff; padding: 30px 24px 26px; }
+.finale-head .trophy { font-size: 56px; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.finale-head h2 { color: #fff; margin: 0 0 6px; }
+.finale-head .sub { color: rgba(255,255,255,0.9); font-size: 0.98rem; margin: 0 auto; max-width: 52ch; }
+.finale-body { padding: 24px 22px 22px; }
+.fragwrap { background: var(--canvas-2); border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px; }
 .fraglabel { font-size: 0.7rem; letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 0 0 8px; }
 .fragnum { font-family: ui-monospace, Menlo, monospace; font-size: 3.4rem; font-weight: 700; letter-spacing: .08em; color: var(--brand-purple); line-height: 1; }
 .boxtag { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-weight: 700; font-size: 0.95rem; padding: 7px 15px; border-radius: 100px; border: 1px solid var(--line); color: var(--ink); }

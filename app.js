@@ -49,10 +49,6 @@
     + '<p>In a regular escape room you hunt for clues to get out of a locked room. This one is digital. Instead of a room, your clues live in the <b>Let Grow app</b>. Each stop points you to a real part of the app: Messages, the field guide, the plant wall, a video, a chat, a field log. Do the task, the app hands you a <b>code word or number</b>, and typing it here unlocks the next stop.</p></div>'
     + '<div class="card"><h3>The goal: open the box</h3>'
     + '<p>Clear all six stops and you get your team\'s secret <b>number</b>. That is half of a combination. Find the other team that shares your box color, put your two numbers together, and open the physical <b>prize box</b>.</p></div>'
-    + '<div class="card"><h3>Before you start</h3>'
-    + '<p>Give everyone a job so at least two people are hands-on:</p>'
-    + '<div class="rolechips"><span class="rolechip">Scanner · drives the app</span><span class="rolechip">Scribe · runs this screen</span><span class="rolechip">Navigator · reads the clues</span></div>'
-    + '<div class="callout" style="margin-top:16px">Wrong code? Just try again. Stuck on a stop? Tap <b>Show a hint</b>. Take your time, there is no clock.</div></div>'
     + '<button class="btn btn-primary btn-block" id="beginBtn" style="margin-top:20px">Start the challenge</button>'
     + '</section>'
     + '<section id="quest">'
@@ -61,9 +57,12 @@
     + '</section>'
     + '<section id="finale" style="display:none">'
     + '<div class="finale-card">'
+    + '<div class="finale-head">'
     + '<div class="trophy"><svg class="ic"><use href="#ic-trophy"/></svg></div>'
     + '<h2>All six stops cleared</h2>'
     + '<p class="sub">You just used every part of the app a Liberty crew works with in the field. Here is your box number.</p>'
+    + '</div>'
+    + '<div class="finale-body">'
     + '<div class="fragwrap">'
     + '<p class="fraglabel">Your team\'s fragment</p>'
     + '<div class="fragnum" id="fragnum">--</div>'
@@ -74,8 +73,8 @@
     + '<li>Find <b>another team with the same box color.</b></li>'
     + '<li>Put your two numbers together into the <b>4-digit combo</b> (your number goes first) and open the box.</li>'
     + '</ol>'
-    + '<p class="prize"><svg class="ic"><use href="#ic-trophy"/></svg> Buttons, stickers, and candy inside</p>'
     + '<div class="restart"><button id="restartBtn">start over</button></div>'
+    + '</div>'
     + '</div>'
     + '</section>'
     + '</main>'
@@ -96,9 +95,7 @@
         body: "Open the Let Grow app and tap <b>Messages</b>. Find <b>" + t.trainer + "</b> in your list and send exactly this:"
           + "<div class='sendblock'><div class='lbl'>Send this message</div><div class='msg'>" + team.toUpperCase() + " CHECKING IN</div></div>"
           + t.trainer + " will message you back a trail word. Type it in below.",
-        accept: [t.word],
-        hintBad: "That is not the word " + t.trainer + " sent. Open Messages and check the reply.",
-        hintExtra: "Still nothing? Make sure you sent <b>" + team.toUpperCase() + " CHECKING IN</b> to " + t.trainer + ", not another trainer."
+        accept: [t.word]
       },
       {
         icon: "ic-search", feat: "Field Guide · Search", title: "Name that compatible plant",
@@ -109,45 +106,33 @@
           + "<li>Tight clusters of coral-pink berries that hang on into winter</li>"
           + "<li>White-tailed deer browse it hard, a compatible species we keep</li>"
           + "</ul>",
-        accept: ["coralberry", "coral berry", "buckbrush", "buck brush"],
-        hintBad: "Not the coral-berry shrub. Try searching the field guide again.",
-        hintExtra: "It goes by two names in Missouri. One sounds like a <b>color</b>, one is what <b>deer</b> do to it. Search 'coral'."
+        accept: ["coralberry", "coral berry", "buckbrush", "buck brush"]
       },
       {
-        icon: "ic-cam", feat: "Plant Identify · Scan", title: "Find it and scan it",
-        body: "Head to the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control, redcedar, black locust, hedge, sweetgum. <b>One</b> is your deer favorite from the last stop."
-          + "<br><br>Point the app's <b>Identify</b> camera at the plants and scan until it names the coralberry / buckbrush. Open its field-guide entry and read the <b>Field Code</b> near the bottom.",
-        accept: ["songbird"],
-        hintBad: "No code yet. Make sure the app actually identified the coralberry.",
-        hintExtra: "The <b>Field Code</b> only shows on the coralberry's own field-guide entry. Scroll to the bottom of that page."
+        icon: "ic-cam", feat: "Plant Identify · Scan", title: "Scan the wall, read the entry",
+        body: "Look at the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control, redcedar, black locust, hedge, sweetgum. Mixed in are a few compatible shrubs."
+          + "<br><br>You are after one compatible shrub with a telltale habit: it can sit in <b>standing water</b> and thrives in wet spots, swamps, stream banks, and lake shores. Point the app's <b>Identify</b> camera at the plants until you find that wetland shrub, then open its <b>Let Grow entry</b>."
+          + "<br><br>Read its height range and enter its <b>maximum height</b>, in feet.",
+        accept: ["12"]
       },
       {
-        icon: "ic-video", feat: "Tutorial Video", title: "Johnny in the field",
-        body: "In the app, open <b>Tutorial Videos</b> and play <b>“Johnny – Compatible or Not?”</b> (about 90 seconds)."
-          + "<br><br>Johnny walks a Missouri right-of-way and points out one <b>incompatible</b> tree that fools new crews. It looks harmless small, then grows fast, right into the conductors. Which tree does Johnny say to <b>treat, not leave?</b>",
-        accept: ["redcedar", "red cedar", "cedar", "eastern redcedar", "eastern red cedar"],
-        hintBad: "Not the one Johnny means. Watch the last part of the clip again.",
-        hintExtra: "It is the <b>evergreen</b> that is all over central Missouri pastures and fence lines."
+        icon: "ic-video", feat: "Field Clips", title: "Watch the field clip",
+        body: "In the app, open <b>Field Clips</b> and play the clip on right-of-way trees."
+          + "<br><br>It walks a Missouri corridor and points out one <b>incompatible</b> tree that fools new crews. It looks harmless small, then grows fast, right into the conductors. Which tree does the clip say to <b>treat, not leave?</b>",
+        accept: ["redcedar", "red cedar", "cedar", "eastern redcedar", "eastern red cedar"]
       },
       {
         icon: "ic-chat", feat: "ChatTrain", title: "The landowner conversation",
         body: "Open <b>ChatTrain</b> and start <b>“Mrs. Webb – the spraying question.”</b>"
           + "<br><br>She saw your crew treating brush near her fence and she is worried you are killing everything, including the plants she likes for wildlife. Talk her through it: you run <b>selective treatment</b> to control the tall incompatible trees and <b>keep the compatible, deer-friendly plants</b> like her coralberry."
           + "<br><br>Work it until ChatTrain says you passed the beat. It shows a pass phrase, type that in.",
-        accept: ["compatible cover", "compatiblecover"],
-        hintBad: "That is not the phrase ChatTrain gave you.",
-        hintExtra: "Keep going until Mrs. Webb is reassured. The <b>pass phrase</b> appears the moment you pass the beat."
+        accept: ["compatible cover", "compatiblecover"]
       },
       {
-        icon: "ic-note", feat: "FieldBite", title: "Log your find", confirm: true,
-        body: "Last stop. Open <b>FieldBite</b> and fill out today's quick log:"
-          + "<ul class='fieldnotes'>"
-          + "<li>Which compatible species did your team find on the wall?</li>"
-          + "<li>Roughly how tall was it?</li>"
-          + "<li>Is it compatible with the right-of-way? (yes / no)</li>"
-          + "</ul>"
-          + "Submit it in the app, then tap the button below for your box number.",
-        confirmLabel: "We submitted our FieldBite"
+        icon: "ic-note", feat: "Field Bites", title: "Finish the field bite",
+        body: "Last stop. Open <b>Field Bites</b> and work through the microlearning on compatible right-of-way plants."
+          + "<br><br>Read the cards and answer the checks all the way to the end. The <b>last card</b> gives you a keyword, enter it below for your box number.",
+        accept: ["low and slow", "lowandslow"]
       }
     ];
   }
@@ -189,32 +174,19 @@
       + "<div class='card brand-bar'>"
       + "<h2>" + s.title + "</h2>"
       + "<div class='body'>" + s.body + "</div>";
-    if (s.confirm) {
-      html += "<div class='answer'><button class='btn btn-primary btn-block' id='confirmBtn'>" + s.confirmLabel + "</button></div>";
-    } else {
-      html += "<div class='answer'>"
-        + "<label for='codein'>Enter the code</label>"
-        + "<input id='codein' autocomplete='off' autocapitalize='characters' spellcheck='false' placeholder='type it here'>"
-        + "<button class='btn btn-primary btn-block' id='goBtn'>Unlock</button>"
-        + "<div class='callout danger hidden' id='hint'></div>"
-        + "<button class='hintlink' id='hintlink'>Stuck? Show a hint</button>"
-        + "<div class='callout hidden' id='hintextra'>" + (s.hintExtra || "") + "</div>"
-        + "</div>";
-    }
+    html += "<div class='answer'>"
+      + "<label for='codein'>Enter the code</label>"
+      + "<input id='codein' autocomplete='off' autocapitalize='characters' spellcheck='false' placeholder='type it here'>"
+      + "<button class='btn btn-primary btn-block' id='goBtn'>Unlock</button>"
+      + "<div class='wrongmsg hidden' id='wrongmsg'>That is not the code. Try again.</div>"
+      + "</div>";
     html += "</div>";
     document.getElementById("stopmount").innerHTML = html;
 
-    if (s.confirm) {
-      document.getElementById("confirmBtn").addEventListener("click", advance);
-    } else {
-      var input = document.getElementById("codein");
-      document.getElementById("goBtn").addEventListener("click", check);
-      input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
-      document.getElementById("hintlink").addEventListener("click", function () {
-        document.getElementById("hintextra").classList.remove("hidden"); this.style.display = "none";
-      });
-      input.focus();
-    }
+    var input = document.getElementById("codein");
+    document.getElementById("goBtn").addEventListener("click", check);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    input.focus();
   }
 
   function check() {
@@ -226,8 +198,7 @@
     if (ok) { playUnlock(advance); }
     else {
       input.classList.remove("wrong"); void input.offsetWidth; input.classList.add("wrong");
-      var h = document.getElementById("hint");
-      h.innerHTML = s.hintBad; h.classList.remove("hidden");
+      document.getElementById("wrongmsg").classList.remove("hidden");
       input.select();
     }
   }
