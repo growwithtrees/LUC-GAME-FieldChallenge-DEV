@@ -8,7 +8,7 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 
 ## 1. The app
 
-- Live: `https://mikestein2016.github.io/luc-field-challenge/` · one page per team slug, opened by that team's QR code (no picker).
+- Live: `https://growwithtrees.github.io/LUC-GAME-FieldChallenge-DEV/` · one page per team slug, opened by that team's QR code (no picker).
 - Each team is named for a central-Missouri **compatible** species that is never a puzzle answer.
 - Six stops, each a real Let Grow feature. Enter the code the app gives you, unlock the next stop. Finish → a 2-digit **fragment**; two same-color teams combine fragments into a 4-digit box combo.
 
