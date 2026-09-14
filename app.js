@@ -122,9 +122,9 @@
       },
       {
         icon: "ic-video", feat: "Field Clips", title: "Watch the field clip",
-        body: "In the app, open <b>Field Clips</b> and play <b>\u201cBotany In A Blink\u201d</b>."
-          + "<br><br>Johnny reads one tree out loud, piece by piece \u2014 leaf shape and teeth, alternate branching, the weak joints on that fast new growth, smooth bark with horizontal white specks, little pear-shaped fruit \u2014 and he holds the name back on purpose. Watch it through to the end."
-          + "<br><br>Name the <b>incompatible</b> tree he says he takes out.",
+        body: "In the app, open <b>Field Clips</b> and play <b>\u201cBotany In A Blink \u2014 Name That Tree.\u201d</b>"
+          + "<br><br>Johnny reads one tree out loud, piece by piece \u2014 leaf shape and fine teeth, glossy on top, alternate branching, the weak joints on that fast new growth, smooth bark with little horizontal white specks, and a tree covered in small pear-shaped fruit."
+          + "<br><br>He never says what it is. <b>You name it.</b> It is an incompatible tree, and it is on the plant wall.",
         accept: ["callery pear", "callerypear", "bradford pear", "bradfordpear", "callery", "pyrus calleryana", "pear"]
       },
       {

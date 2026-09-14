@@ -38,7 +38,8 @@ Fragment order within a pair is the table order (first team's number goes first)
 1. **Messages** — team opens Messages, finds their trainer, sends `<TEAM> CHECKING IN` (e.g. `SUMAC CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
 2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `BUCKBRUSH`** (`CORALBERRY` also accepted). LUC's own compatible-species list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so that is almost certainly the Plantdex entry name — check which name the entry is filed under before printing anything.
 3. **Plant Identify / Scan** — on the plant wall, find the one **compatible shrub that grows in standing water** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`.** (Reads real entry data — no planted code. See [design note](#5-design-notes).)
-4. **Field Clips** — play **“Botany In A Blink”** (Johnny, 19 Jan 2026). He reads one tree part by part and withholds its name until the closing line, where he identifies it and says he takes it out. **Answer = `CALLERY PEAR`** (`BRADFORD PEAR` also accepted). The withheld name is the puzzle, so the team has to watch it through rather than skip to the end.
+4. **Field Clips** — play **“Botany In A Blink — Name That Tree.”** Johnny reads one tree part by part (2:10, vertical) and **never names it**, on screen or in audio. The team names it from the field marks. **Answer = `CALLERY PEAR`** (`BRADFORD PEAR` and bare `PEAR` also accepted).
+   > **The clip must be published under a title that does not contain the species.** The source file on disk is named *…Botany In A Blink - Callery Pear.mp4*; publishing it under that name hands the team the answer and the stop is dead. Publish as **“Botany In A Blink — Name That Tree”** (what the in-app clue tells them to open) or any other neutral title, and change the clue to match.
 5. **ChatTrain** — reassure landowner **Mrs. Webb** about spraying; pass the beat for the phrase. **Answer = `COMPATIBLE COVER`.**
 6. **Field Bites** — complete the microlearning *What Makes a Plant Compatible?*; enter the keyword it ends on. **Answer = `BIOLOGICAL CONTROL`.** The keyword only appears once all three knowledge checks are answered, so the stop cannot be skipped by swiping to the last card.
 
@@ -64,9 +65,11 @@ Per-team words are what stop one team shouting the answer across the room. **If 
 | Stop | Feature | Build |
 |---|---|---|
 | 2, 3 | Plantdex | **No new build expected** — uses existing entries (buckbrush/coralberry for the search clue; buttonbush's real height for the scan). Confirm both are loaded for LUC **and note which common name each is filed under**. Both are on LUC's official 26-species compatible list and both have complete photo sets, so absence would be a surprise. |
-| 4 | Field Clips | **EXISTS, NO SHOOT NEEDED** — *2026.01.19 Botany In A Blink — Callery Pear.mp4* (96 MB, in `LUC Training/Environmental Tailgates/2025 Johnny videos/!Completed/`). Only open item: confirm it is **published to Field Clips in the app**, and under a title the clue can name. |
+| 4 | Field Clips | **EXISTS, NO SHOOT NEEDED** — `2026.01.19 Botany In A Blink - Callery Pear.mp4` (96 MB, 2:10, vertical, in `LUC Training/Environmental Tailgates/2025 Johnny videos/!Completed/`). Verified: no species name in the audio, no title card, lower-thirds are trait labels only (LEAF / SMELL / …), generic *Botany In A Blink* outro. **Publish it to Field Clips as “Botany In A Blink — Name That Tree”** — never under the filename. |
 | 5 | ChatTrain | The **Mrs. Webb** flow (spec below). |
 | 6 | Field Bites | **BUILT** — *What Makes a Plant Compatible?* (`luc-what-makes-a-plant-compatible`), at `~/Documents/GitHub/luc-fb-compatible-species/`. **Not yet in a repo and not yet loaded into Field Bites.** |
+
+**Footnote on the clip, for non-game use.** Johnny *did* record a reveal — `November Videos/Johnny Voice Audio/callery pear pt 3.mp3`: *"What do you think it is? …this is Callery pear. A problem tree, invasive… obviously this can't grow in the line… I take it out."* It was cut from the published 2:10 edit. For the escape room that cut is what makes the stop work, so leave it out. If a straight training version is ever wanted, that audio is the ending.
 
 ### ChatTrain — "Mrs. Webb — the spraying question" (single beat)
 - **Persona:** Mrs. Webb, a landowner. Concerned, not hostile. (Approved LUC persona surname.)
@@ -125,7 +128,7 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 
 **Needs someone at Liberty to confirm (cannot be settled from our side):**
 1. **Does Messages let a participant message a named trainer?** Stop 1 does not exist if the answer is no. Still the single biggest unknown.
-2. **Is *Botany In A Blink — Callery Pear* published to Field Clips?** The video is finished and it says exactly what stop 4 needs. It just has to be in the app.
+2. **Publish the clip to Field Clips as “Botany In A Blink — Name That Tree.”** The video is finished and verified clean (it never names the tree). The *filename* names it, so the listing title is the one thing that can kill this stop.
 3. **Are buckbrush and buttonbush loaded in Plantdex, and under which common name?** Stop 2 is typed by the learner, stop 3 depends on buttonbush's entry listing a 12 ft max height.
 
 **On us:**
