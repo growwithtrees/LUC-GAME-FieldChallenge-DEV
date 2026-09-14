@@ -12,36 +12,48 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 - Each team is named for a central-Missouri **compatible** species that is never a puzzle answer.
 - Six stops, each a real Let Grow feature. Enter the code the app gives you, unlock the next stop. Finish → a 2-digit **fragment**; two same-color teams combine fragments into a 4-digit box combo.
 
-| Team | Slug | Box | Fragment | Trainer | Trainer's reply word |
+| Team | Slug | Box | Fragment | Trainer | Reply word |
 |---|---|---|---|---|---|
-| Sumac | `/sumac` | Red | 47 | Dale | `CORRIDOR` |
-| Elderberry | `/elderberry` | Red | 12 | Gary | `COMPATIBLE` |
-| Bluestem | `/bluestem` | Green | 58 | Rhonda | `SELECTIVE` |
-| Hazelnut | `/hazelnut` | Green | 36 | Sue | `CLEARANCE` |
+| Sumac | `/sumac` | Red | 47 | Hannah | `CORRIDOR` |
+| Elderberry | `/elderberry` | Red | 12 | Hannah | `COMPATIBLE` |
+| Bluestem | `/bluestem` | Green | 58 | Hannah | `SELECTIVE` |
+| Hazelnut | `/hazelnut` | Green | 36 | Hannah | `CLEARANCE` |
+| Ninebark | `/ninebark` | Blue | 29 | Hannah | `WIRE ZONE` |
+| Spicebush | `/spicebush` | Blue | 64 | Hannah | `BORDER ZONE` |
+| Pawpaw | `/pawpaw` | Amber | 81 | Hannah | `FLASHOVER` |
+| Redbud | `/redbud` | Amber | 53 | Hannah | `CONDUCTOR` |
+| Witchhazel | `/witchhazel` | Purple | 70 | Hannah | `LOW GROWING` |
+| Wahoo | `/wahoo` | Purple | 26 | Hannah | `ENCROACH` |
 
-Red box combo = **4712** (Sumac 47 then Elderberry 12). Green box = **5836** (Bluestem 58 then Hazelnut 36). Trainer names are placeholders — swap for the real train-the-trainer people.
+**Box combos:** Red `4712` · Green `5836` · Blue `2964` · Amber `8153` · Purple `7026`.
+
+**Team count does not depend on headcount.** All 10 pages are built. Hand the QR cards out **in colour pairs** — if the room only makes 7 or 8 teams, drop whole pairs (e.g. skip Purple and Amber) so every box still has exactly two teams. Anya's headcount only changes how many people stand behind each QR.
+
+Fragment order within a pair is the table order (first team's number goes first).
 
 ---
 
 ## 2. The six stops (content + answer)
 
 1. **Messages** — team opens Messages, finds their trainer, sends `<TEAM> CHECKING IN` (e.g. `SUMAC CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
-2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `CORALBERRY` / `BUCKBRUSH`.**
+2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `BUCKBRUSH`** (`CORALBERRY` also accepted). LUC's own compatible-species list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so that is almost certainly the Plantdex entry name — check which name the entry is filed under before printing anything.
 3. **Plant Identify / Scan** — on the plant wall, find the one **compatible shrub that grows in standing water** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`.** (Reads real entry data — no planted code. See [design note](#5-design-notes).)
-4. **Field Clips** — play the clip on right-of-way trees; it names the incompatible tree that fools new crews (looks harmless small, grows into the conductors). **Answer = `CEDAR` (Eastern redcedar).**
+4. **Field Clips** — play **“Botany In A Blink”** (Johnny, 19 Jan 2026). He reads one tree part by part and withholds its name until the closing line, where he identifies it and says he takes it out. **Answer = `CALLERY PEAR`** (`BRADFORD PEAR` also accepted). The withheld name is the puzzle, so the team has to watch it through rather than skip to the end.
 5. **ChatTrain** — reassure landowner **Mrs. Webb** about spraying; pass the beat for the phrase. **Answer = `COMPATIBLE COVER`.**
-6. **Field Bites** — complete the microlearning on compatible ROW plants; enter the keyword on its last card. **Answer = `LOW AND SLOW` (placeholder — set to whatever the real Field Bite ends on).**
+6. **Field Bites** — complete the microlearning *What Makes a Plant Compatible?*; enter the keyword it ends on. **Answer = `BIOLOGICAL CONTROL`.** The keyword only appears once all three knowledge checks are answered, so the stop cannot be skipped by swiping to the last card.
 
 ---
 
 ## 3. Trainer cards (print one per trainer)
 
-Only 3–4 trainers needed. Each team's message stop can be staggered to a different position in their flow so no trainer gets swarmed (the app currently puts it at stop 1; adjust per team if desired).
+**One trainer: Hannah.** All ten teams message the same person, so there is nothing to staff and nothing to brief beyond one card. Each team still gets its **own** reply word, and the team's name is right there in the message they send, so Hannah just reads the name and looks up the row.
 
-**Example — Dale (Team Sumac):**
-> **You are Dale, crew lead.** Sumac will message you `SUMAC CHECKING IN`. Reply with one word: **CORRIDOR**. That's it — that word unlocks their next stop. If two teams message at once, just reply to each. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
+**Hannah's card (print the table from §1 on the back):**
+> **Teams will message you `<TEAM NAME> CHECKING IN`.** Read the team name, find it on your card, reply with **that team's one word** and nothing else. Ten teams, ten messages. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
+>
+> `SUMAC`→CORRIDOR · `ELDERBERRY`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→WIRE ZONE · `SPICEBUSH`→BORDER ZONE · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→LOW GROWING · `WAHOO`→ENCROACH
 
-Reply words: Dale → `CORRIDOR`, Gary → `COMPATIBLE`, Rhonda → `SELECTIVE`, Sue → `CLEARANCE`.
+Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
 
 > Confirm with Lindsey that the Messages feature lets a participant message a named trainer and that trainers can watch an inbox during the icebreaker.
 
@@ -51,10 +63,10 @@ Reply words: Dale → `CORRIDOR`, Gary → `COMPATIBLE`, Rhonda → `SELECTIVE`,
 
 | Stop | Feature | Build |
 |---|---|---|
-| 2, 3 | Plantdex | **No new build** — uses existing entries (coralberry for the search clue; buttonbush's real height for the scan). Just make sure both are loaded. |
-| 4 | Field Clips | A clip on ROW trees that clearly flags **Eastern redcedar** as the incompatible tree to treat. Must exist / be shot — longest lead time. |
+| 2, 3 | Plantdex | **No new build expected** — uses existing entries (buckbrush/coralberry for the search clue; buttonbush's real height for the scan). Confirm both are loaded for LUC **and note which common name each is filed under**. Both are on LUC's official 26-species compatible list and both have complete photo sets, so absence would be a surprise. |
+| 4 | Field Clips | **EXISTS, NO SHOOT NEEDED** — *2026.01.19 Botany In A Blink — Callery Pear.mp4* (96 MB, in `LUC Training/Environmental Tailgates/2025 Johnny videos/!Completed/`). Only open item: confirm it is **published to Field Clips in the app**, and under a title the clue can name. |
 | 5 | ChatTrain | The **Mrs. Webb** flow (spec below). |
-| 6 | Field Bites | A microlearning on compatible ROW plants ending with a **keyword** on the last card. |
+| 6 | Field Bites | **BUILT** — *What Makes a Plant Compatible?* (`luc-what-makes-a-plant-compatible`), at `~/Documents/GitHub/luc-fb-compatible-species/`. **Not yet in a repo and not yet loaded into Field Bites.** |
 
 ### ChatTrain — "Mrs. Webb — the spraying question" (single beat)
 - **Persona:** Mrs. Webb, a landowner. Concerned, not hostile. (Approved LUC persona surname.)
@@ -71,9 +83,10 @@ Reply words: Dale → `CORRIDOR`, Gary → `COMPATIBLE`, Rhonda → `SELECTIVE`,
 Print laminated images. **Test that each IDs in the app before the event.**
 
 - **Buttonbush** — the scan target; must be the **only wetland / standing-water plant** on the wall so the trait clue is unique. (Max height 12 ft in its entry.)
-- **Coralberry / Buckbrush** — the field-guide (search) answer.
+- **Buckbrush / Coralberry** — the field-guide (search) answer.
 - Other compatibles as near-misses: **Blackberry**, **Gray dogwood**.
-- Incompatible trees a crew controls: **Eastern redcedar** (the Field Clip answer), **Black locust**, **Osage orange / hedge**, **Sweetgum**, **Callery pear**.
+- Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Osage orange / hedge**, **Sweetgum**.
+- **Keep elderberry off the wall.** It is a team name, and team names must never be puzzle answers. Same reason the other nine team species stay off it.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
 
@@ -81,9 +94,9 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 
 ## 6. Finale, physical setup, roles
 
-- **3–4 combo-lock prize boxes**, grouped by color. Two same-color teams combine their fragments into the 4-digit combo (set the physical locks to `4712` / `5836`, or change the fragments to match your locks). Prize inside (buttons / stickers / candy).
+- **Five combo-lock prize boxes**, one per colour, for a full ten-team room. Two same-colour teams combine their fragments into the 4-digit combo — set the locks to `4712` (Red), `5836` (Green), `2964` (Blue), `8153` (Amber), `7026` (Purple), or change the fragments in `app.js` to match locks you already own. Fewer teams = fewer boxes; drop whole colours. Prize inside (buttons / stickers / candy).
 - **Roles (print one card per team):** Scanner (drives the app), Scribe (runs the screen), Navigator (reads the clues) — forces ≥2 people hands-on.
-- **On-site setup, target ≤30 min:** tape up the plant wall · set 10 team QR cards on tables · set the boxes with combo locks + prizes · brief the trainers on their reply word. All Let Grow content + all printing is done ahead.
+- **On-site setup, target ≤30 min:** tape up the plant wall · set 10 team QR cards on tables · set the boxes with combo locks + prizes · hand Hannah her reply-word card. All Let Grow content + all printing is done ahead.
 
 ---
 
@@ -98,19 +111,27 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 
 | Stop | Feature | Answer |
 |---|---|---|
-| 1 | Messages | trainer's word (CORRIDOR / COMPATIBLE / SELECTIVE / CLEARANCE) |
-| 2 | Field Guide / Search | `CORALBERRY` (or `BUCKBRUSH`) |
+| 1 | Messages | Hannah's per-team word (see §1 table) |
+| 2 | Field Guide / Search | `BUCKBRUSH` (or `CORALBERRY`) |
 | 3 | Plant Identify / Scan | `12` (buttonbush max height) |
-| 4 | Field Clips | `CEDAR` (Eastern redcedar) |
+| 4 | Field Clips | `CALLERY PEAR` (or `BRADFORD PEAR`) |
 | 5 | ChatTrain | `COMPATIBLE COVER` |
-| 6 | Field Bites | `LOW AND SLOW` (placeholder keyword) |
-| — | Finale | fragment → 4-digit box combo (Red 4712, Green 5836) |
+| 6 | Field Bites | `BIOLOGICAL CONTROL` |
+| — | Finale | fragment → 4-digit box combo (Red 4712, Green 5836, Blue 2964, Amber 8153, Purple 7026) |
 
 ---
 
 ### Open items before the event
-1. Confirm **coralberry** is loaded (stop 2) and **buttonbush** is the only wetland plant on the wall (stop 3).
-2. **Field Clips** redcedar clip exists / gets shot.
-3. Build the **Mrs. Webb ChatTrain** flow and the **Field Bites** microlearning (set its real keyword).
-4. Real **trainer names + reply words**; confirm Messages supports messaging a named trainer.
-5. Number of **boxes** + their real lock combos; prize contents.
+
+**Needs someone at Liberty to confirm (cannot be settled from our side):**
+1. **Does Messages let a participant message a named trainer?** Stop 1 does not exist if the answer is no. Still the single biggest unknown.
+2. **Is *Botany In A Blink — Callery Pear* published to Field Clips?** The video is finished and it says exactly what stop 4 needs. It just has to be in the app.
+3. **Are buckbrush and buttonbush loaded in Plantdex, and under which common name?** Stop 2 is typed by the learner, stop 3 depends on buttonbush's entry listing a 12 ft max height.
+
+**On us:**
+4. Push the **Field Bite** to `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` and load it into Field Bites.
+5. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
+6. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
+7. Buttonbush must be the **only** wetland plant on the wall, and elderberry must not be on it at all.
+
+**Closed:** ~~trainer names~~ (Hannah, all teams) · ~~redcedar clip must be shot~~ (Callery pear clip already exists) · ~~team count waits on headcount~~ (10 pages built, hand out in colour pairs) · ~~Mrs. Webb ChatTrain~~ (trainer 62, `https://chattrain.org/play/252ffb2cf73a`) · ~~Field Bite keyword~~ (`BIOLOGICAL CONTROL`).
