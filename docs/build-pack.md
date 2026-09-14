@@ -58,7 +58,7 @@ Fragment order within a pair is the table order (first team's number goes first)
 
 Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
 
-> Confirm with Lindsey that the Messages feature lets a participant message a named trainer and that trainers can watch an inbox during the icebreaker.
+> **Confirmed (Mike, 14 Sep): participants can message other people in the app**, so stop 1 works as designed. Hannah just needs to be watching her inbox during the icebreaker.
 
 ---
 
@@ -128,15 +128,16 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 
 ### Open items before the event
 
-**Needs someone at Liberty to confirm (cannot be settled from our side):**
-1. **Does Messages let a participant message a named trainer?** Stop 1 does not exist if the answer is no. Still the single biggest unknown.
-2. **Publish the clip to Field Clips as “Botany In A Blink — Name That Tree.”** The video is finished and verified clean (it never names the tree). The *filename* names it, so the listing title is the one thing that can kill this stop.
-3. ~~Are the two plants loaded in Plantdex?~~ **CLOSED 14 Sep** — Coralberry (143/455) and Buttonbush (75/380) are both loaded; buttonbush's 144 in renders as **12 ft**, so stop 3's answer stands.
+**In the app — nothing here is blocked:**
+1. **Upload the clip to Field Clips as “Botany In A Blink — Name That Tree.”** Source: `2026.01.19 Botany In A Blink - Callery Pear.mp4`. **Never publish it under the filename** — the video itself never names the tree, so the listing title is the only thing that can kill this stop.
+2. Have **Hannah watching her Messages inbox** during the icebreaker, reply-word card in hand.
 
 **On us:**
-4. Push the **Field Bite** to `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` and load it into Field Bites.
-5. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
-6. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
-7. Buttonbush must be the **only** wetland plant on the wall, and elderberry must not be on it at all.
+3. Push the **Field Bite** to `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` and load it into Field Bites.
+4. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
+5. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
+6. Buttonbush must be the **only** wetland plant on the wall, callery pear **must** be on it, and elderberry must not be on it at all.
 
-**Closed:** ~~trainer names~~ (Hannah, all teams) · ~~redcedar clip must be shot~~ (Callery pear clip already exists) · ~~team count waits on headcount~~ (10 pages built, hand out in colour pairs) · ~~Mrs. Webb ChatTrain~~ (trainer 62, `https://chattrain.org/play/252ffb2cf73a`) · ~~Field Bite keyword~~ (`BIOLOGICAL CONTROL`).
+**Nothing is blocked on a Liberty answer any more.** Everything above is ours to do.
+
+**Closed:** ~~trainer names~~ (Hannah, all teams) · ~~can a participant message a trainer?~~ (yes, 14 Sep) · ~~redcedar clip must be shot~~ (Callery pear clip exists, verified it never names the tree) · ~~team count waits on headcount~~ (10 pages, handed out in colour pairs) · ~~are the plants in Plantdex?~~ (Coralberry 143/455 · Buttonbush 75/380 at 144 in = 12 ft) · ~~Mrs. Webb ChatTrain~~ (trainer 62, `https://chattrain.org/play/252ffb2cf73a`) · ~~Field Bite keyword~~ (`BIOLOGICAL CONTROL`).
