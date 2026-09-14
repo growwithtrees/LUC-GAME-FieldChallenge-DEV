@@ -111,14 +111,14 @@
           + "<li>Tight clusters of coral-pink berries that hang on into winter</li>"
           + "<li>White-tailed deer browse it hard, a compatible species we keep</li>"
           + "</ul>",
-        accept: ["coralberry", "coral berry", "buckbrush", "buck brush"]
+        accept: ["coralberry", "coral berry", "buckbrush", "buck brush", "indian currant"]
       },
       {
         icon: "ic-cam", feat: "Plant Identify · Scan", title: "Scan the wall, read the entry",
         body: "Look at the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control, redcedar, black locust, hedge, sweetgum. Mixed in are a few compatible shrubs."
           + "<br><br>You are after one compatible shrub with a telltale habit: it can sit in <b>standing water</b> and thrives in wet spots, swamps, stream banks, and lake shores. Point the app's <b>Identify</b> camera at the plants until you find that wetland shrub, then open its <b>Let Grow entry</b>."
           + "<br><br>Read its height range and enter its <b>maximum height</b>, in feet.",
-        accept: ["12"]
+        accept: ["12", "144"]
       },
       {
         icon: "ic-video", feat: "Field Clips", title: "Watch the field clip",

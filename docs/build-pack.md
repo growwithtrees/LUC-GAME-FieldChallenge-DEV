@@ -36,8 +36,10 @@ Fragment order within a pair is the table order (first team's number goes first)
 ## 2. The six stops (content + answer)
 
 1. **Messages** — team opens Messages, finds their trainer, sends `<TEAM> CHECKING IN` (e.g. `SUMAC CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
-2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `BUCKBRUSH`** (`CORALBERRY` also accepted). LUC's own compatible-species list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so that is almost certainly the Plantdex entry name — check which name the entry is filed under before printing anything.
-3. **Plant Identify / Scan** — on the plant wall, find the one **compatible shrub that grows in standing water** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`.** (Reads real entry data — no planted code. See [design note](#5-design-notes).)
+2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `CORALBERRY`** (`BUCKBRUSH` and `INDIAN CURRANT` also accepted).
+   > **CONFIRMED loaded — plant ids 143 (WZC-BZS) and 455 (WZS-BZS), filed as “Coralberry.”** Note LUC's own 26-species compatible list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so crews may type the name their own training taught them. Both accepted; the facilitator should not correct anyone who says buckbrush.
+3. **Plant Identify / Scan** — on the plant wall, find the one **compatible shrub that grows in standing water** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`** (`144` also accepted as a safety net). Reads real entry data, no planted code — see [design note](#7-design-notes).
+   > **CONFIRMED loaded — plant ids 75 (WZD-BZS) and 380 (LET_GROW), *Cephalanthus occidentalis*, max height `144`.** The database stores inches; the learner app runs it through `inchToFeet()` and renders **feet + inches**, so the entry reads **12 ft 0 in**. The answer is therefore `12`, as written.
 4. **Field Clips** — play **“Botany In A Blink — Name That Tree.”** Johnny reads one tree part by part (2:10, vertical) and **never names it**, on screen or in audio. The team names it from the field marks. **Answer = `CALLERY PEAR`** (`BRADFORD PEAR` and bare `PEAR` also accepted).
    > **The clip must be published under a title that does not contain the species.** The source file on disk is named *…Botany In A Blink - Callery Pear.mp4*; publishing it under that name hands the team the answer and the stop is dead. Publish as **“Botany In A Blink — Name That Tree”** (what the in-app clue tells them to open) or any other neutral title, and change the clue to match.
 5. **ChatTrain** — reassure landowner **Mrs. Webb** about spraying; pass the beat for the phrase. **Answer = `COMPATIBLE COVER`.**
@@ -64,7 +66,7 @@ Per-team words are what stop one team shouting the answer across the room. **If 
 
 | Stop | Feature | Build |
 |---|---|---|
-| 2, 3 | Plantdex | **No new build expected** — uses existing entries (buckbrush/coralberry for the search clue; buttonbush's real height for the scan). Confirm both are loaded for LUC **and note which common name each is filed under**. Both are on LUC's official 26-species compatible list and both have complete photo sets, so absence would be a surprise. |
+| 2, 3 | Plantdex | **BOTH CONFIRMED LOADED, no build needed.** Coralberry (ids 143/455) and Buttonbush (ids 75/380, 144 in = **12 ft**). Verified against the exported LUC plant list, `GWT/GWT Let Grow/PlantDex/LUC plant list .csv` + `2023.06.01 Let Grow Plant List.csv`. **Each is duplicated** under two ids/growth zones (and id 380 is `"Buttonbush "` with a trailing space) — harmless here, since both buttonbush rows carry the same 144 and stop 2 only needs the name, but expect two hits in search. |
 | 4 | Field Clips | **EXISTS, NO SHOOT NEEDED** — `2026.01.19 Botany In A Blink - Callery Pear.mp4` (96 MB, 2:10, vertical, in `LUC Training/Environmental Tailgates/2025 Johnny videos/!Completed/`). Verified: no species name in the audio, no title card, lower-thirds are trait labels only (LEAF / SMELL / …), generic *Botany In A Blink* outro. **Publish it to Field Clips as “Botany In A Blink — Name That Tree”** — never under the filename. |
 | 5 | ChatTrain | The **Mrs. Webb** flow (spec below). |
 | 6 | Field Bites | **BUILT** — *What Makes a Plant Compatible?* (`luc-what-makes-a-plant-compatible`), at `~/Documents/GitHub/luc-fb-compatible-species/`. **Not yet in a repo and not yet loaded into Field Bites.** |
@@ -86,7 +88,7 @@ Per-team words are what stop one team shouting the answer across the room. **If 
 Print laminated images. **Test that each IDs in the app before the event.**
 
 - **Buttonbush** — the scan target; must be the **only wetland / standing-water plant** on the wall so the trait clue is unique. (Max height 12 ft in its entry.)
-- **Buckbrush / Coralberry** — the field-guide (search) answer.
+- **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
 - Other compatibles as near-misses: **Blackberry**, **Gray dogwood**.
 - Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Osage orange / hedge**, **Sweetgum**.
 - **Keep elderberry off the wall.** It is a team name, and team names must never be puzzle answers. Same reason the other nine team species stay off it.
@@ -115,7 +117,7 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 | Stop | Feature | Answer |
 |---|---|---|
 | 1 | Messages | Hannah's per-team word (see §1 table) |
-| 2 | Field Guide / Search | `BUCKBRUSH` (or `CORALBERRY`) |
+| 2 | Field Guide / Search | `CORALBERRY` (app name) / `BUCKBRUSH` (LUC's name) — both accepted |
 | 3 | Plant Identify / Scan | `12` (buttonbush max height) |
 | 4 | Field Clips | `CALLERY PEAR` (or `BRADFORD PEAR`) |
 | 5 | ChatTrain | `COMPATIBLE COVER` |
@@ -129,7 +131,7 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 **Needs someone at Liberty to confirm (cannot be settled from our side):**
 1. **Does Messages let a participant message a named trainer?** Stop 1 does not exist if the answer is no. Still the single biggest unknown.
 2. **Publish the clip to Field Clips as “Botany In A Blink — Name That Tree.”** The video is finished and verified clean (it never names the tree). The *filename* names it, so the listing title is the one thing that can kill this stop.
-3. **Are buckbrush and buttonbush loaded in Plantdex, and under which common name?** Stop 2 is typed by the learner, stop 3 depends on buttonbush's entry listing a 12 ft max height.
+3. ~~Are the two plants loaded in Plantdex?~~ **CLOSED 14 Sep** — Coralberry (143/455) and Buttonbush (75/380) are both loaded; buttonbush's 144 in renders as **12 ft**, so stop 3's answer stands.
 
 **On us:**
 4. Push the **Field Bite** to `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` and load it into Field Bites.
