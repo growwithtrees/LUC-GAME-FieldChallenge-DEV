@@ -69,7 +69,7 @@ Per-team words are what stop one team shouting the answer across the room. **If 
 | 2, 3 | Plantdex | **BOTH CONFIRMED LOADED, no build needed.** Coralberry (ids 143/455) and Buttonbush (ids 75/380, 144 in = **12 ft**). Verified against the exported LUC plant list, `GWT/GWT Let Grow/PlantDex/LUC plant list .csv` + `2023.06.01 Let Grow Plant List.csv`. **Each is duplicated** under two ids/growth zones (and id 380 is `"Buttonbush "` with a trailing space) — harmless here, since both buttonbush rows carry the same 144 and stop 2 only needs the name, but expect two hits in search. |
 | 4 | Field Clips | **CUT AND FILED** — `2026.09.14 Treeline - What's the Tree.mp4` (93 MB, 2:06, 608×1080, in `LUC Training/Environmental Tailgates/2025 Johnny videos/!Completed/`). Verified on the export: no species name in the audio, no opening title card, lower-thirds are trait labels only (LEAF / SMELL / …), generic *Botany In A Blink* outro. **Publish under a title containing “What’s the Tree”** to match the in-app clue. |
 | 5 | ChatTrain | The **Mrs. Webb** flow (spec below). |
-| 6 | Field Bites | **BUILT** — *What Makes a Plant Compatible?* (`luc-what-makes-a-plant-compatible`), at `~/Documents/GitHub/luc-fb-compatible-species/`. **Not yet in a repo and not yet loaded into Field Bites.** |
+| 6 | Field Bites | **BUILT AND IN A REPO** — *What Makes a Plant Compatible?* (`luc-what-makes-a-plant-compatible`), `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` (private). Still has to be **loaded into Field Bites in the app**. |
 
 **Footnote on the clip, for non-game use.** Johnny *did* record a reveal — `November Videos/Johnny Voice Audio/callery pear pt 3.mp3`: *"What do you think it is? …this is Callery pear. A problem tree, invasive… obviously this can't grow in the line… I take it out."* It was cut from the published 2:10 edit. For the escape room that cut is what makes the stop work, so leave it out. If a straight training version is ever wanted, that audio is the ending.
 
@@ -133,7 +133,7 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 2. Have **Hannah watching her Messages inbox** during the icebreaker, reply-word card in hand.
 
 **On us:**
-3. Push the **Field Bite** to `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` and load it into Field Bites.
+3. **Load the Field Bite into Field Bites in the app.** Repo is live: `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` (private, like every other FB repo). Ship it as a **package**, not a paste — `./make-package.sh` builds the zip, and the app truncates pasted HTML at ~64 KB while this deck is ~60 KB standalone / 1.7 MB packaged.
 4. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
 5. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
 6. Buttonbush must be the **only** wetland plant on the wall, callery pear **must** be on it, and elderberry must not be on it at all.
