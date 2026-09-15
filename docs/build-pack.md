@@ -15,7 +15,7 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 | Team | Slug | Box | Fragment | Trainer | Reply word |
 |---|---|---|---|---|---|
 | Sumac | `/sumac` | Red | 47 | Hannah | `CORRIDOR` |
-| Elderberry | `/elderberry` | Red | 12 | Hannah | `COMPATIBLE` |
+| Ironwood | `/ironwood` | Red | 12 | Hannah | `COMPATIBLE` |
 | Bluestem | `/bluestem` | Green | 58 | Hannah | `SELECTIVE` |
 | Hazelnut | `/hazelnut` | Green | 36 | Hannah | `CLEARANCE` |
 | Ninebark | `/ninebark` | Blue | 29 | Hannah | `FOLIAR` |
@@ -38,7 +38,7 @@ Fragment order within a pair is the table order (first team's number goes first)
 1. **Messages** — team opens Messages, finds their trainer, sends `<TEAM> CHECKING IN` (e.g. `SUMAC CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
 2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `CORALBERRY`** (`BUCKBRUSH` and `INDIAN CURRANT` also accepted).
    > **CONFIRMED loaded — plant ids 143 (WZC-BZS) and 455 (WZS-BZS), filed as “Coralberry.”** Note LUC's own 26-species compatible list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so crews may type the name their own training taught them. Both accepted; the facilitator should not correct anyone who says buckbrush.
-3. **Plant Identify / Scan** — on the plant wall, find the one **compatible shrub that grows in standing water** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`** (`144` also accepted as a safety net). Reads real entry data, no planted code — see [design note](#7-design-notes).
+3. **Plant Identify / Scan** — on the plant wall, find the shrub that grows **with its feet in the water** and carries a **creamy white pincushion flowerhead** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`** (`144` also accepted as a safety net). Reads real entry data, no planted code — see [design note](#7-design-notes).
    > **CONFIRMED loaded — plant ids 75 (WZD-BZS) and 380 (LET_GROW), *Cephalanthus occidentalis*, max height `144`.** The database stores inches; the learner app runs it through `inchToFeet()` and renders **feet + inches**, so the entry reads **12 ft 0 in**. The answer is therefore `12`, as written.
 4. **Field Clips** — play **“What’s the Tree.”** Johnny reads one tree part by part (2:06, vertical) and **never names it**, on screen or in audio. The team names it from the field marks. **Answer = `CALLERY PEAR`** (`BRADFORD PEAR` and bare `PEAR` also accepted).
    > **The published title must not contain the species.** Mike cut a dedicated version for this, `2026.09.14 Treeline - What's the Tree.mp4` — publish that one, not the original `…Botany In A Blink - Callery Pear.mp4`, whose filename gives the answer away. The in-app clue says **“What’s the Tree,”** so keep that phrase in the Field Clips title.
@@ -54,7 +54,7 @@ Fragment order within a pair is the table order (first team's number goes first)
 **Hannah's card (print the table from §1 on the back):**
 > **Teams will message you `<TEAM NAME> CHECKING IN`.** Read the team name, find it on your card, reply with **that team's one word** and nothing else. Ten teams, ten messages. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
 >
-> `SUMAC`→CORRIDOR · `ELDERBERRY`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→FOLIAR · `SPICEBUSH`→BASAL · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→SAPLING · `WAHOO`→ENCROACH
+> `SUMAC`→CORRIDOR · `IRONWOOD`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→FOLIAR · `SPICEBUSH`→BASAL · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→SAPLING · `WAHOO`→ENCROACH
 
 **Every reply word is a single word on purpose** — an earlier draft had WIRE ZONE / BORDER ZONE / LOW GROWING, and a space in Hannah's reply would have failed the match. The matcher is now spacing-tolerant either way, but keep the words single. Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
 
@@ -91,7 +91,10 @@ Print laminated images. **Test that each IDs in the app before the event.**
 - **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
 - Other compatibles as near-misses: **Blackberry**, **Gray dogwood**.
 - Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Osage orange / hedge**, **Sweetgum**.
-- **Keep elderberry off the wall.** It is a team name, and team names must never be puzzle answers. Same reason the other nine team species stay off it.
+- **Elderberry** — compatible near-miss, on the wall as of 15 Sep. The team formerly called Elderberry was renamed **Ironwood** to free the name up.
+  > **Know the hazard.** Elderberry's Plantdex entry is a clone of buttonbush's on every field stop 3 reads — same growth zone (WZD-BZS), same Opposite branching, same MEDIUM growth speed, **same 144 in / 12 ft max height**, same extra info. They differ only in name, Latin name and family. A team that scans elderberry instead of buttonbush therefore gets the right answer for the wrong reason, invisibly. That is why stop 3's clue leads on the **creamy white pincushion flowerhead** — which nothing else on the wall has — rather than on wet ground alone, since elderberry is also a moist-site shrub.
+  > **Seven plants on LUC's list sit at 144 in** (False Indigo Bush, Elderberry, Hazelnut, Glossy Buckthorn, Japanese Knotweed, Mountain Pepperbush, Buttonbush). **Check any new wall plant against that list before it goes up.**
+- Team names must never be puzzle **answers**. Appearing on the wall as a distractor is fine.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
 
@@ -136,7 +139,7 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 3. **Load the Field Bite into Field Bites in the app.** Repo is live: `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` (private, like every other FB repo). Ship it as a **package**, not a paste — `./make-package.sh` builds the zip, and the app truncates pasted HTML at ~64 KB while this deck is ~60 KB standalone / 1.7 MB packaged.
 4. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
 5. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
-6. Buttonbush must be the **only** wetland plant on the wall, callery pear **must** be on it, and elderberry must not be on it at all.
+6. Callery pear **must** be on the wall (stop 4's answer). Buttonbush is the scan target — read the elderberry note in §5 before adding any other wet-site shrub.
 
 **Nothing is blocked on a Liberty answer any more.** Everything above is ours to do.
 
