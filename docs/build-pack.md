@@ -91,7 +91,7 @@ Fragment order within a pair is the table order (first team's number goes first)
 **The photos are a deliberate mix of flower, fruit, leaf and bark.** Identify asks the learner which
 one they are photographing, and getting that selector right is the real skill the stop teaches — a
 team that leaves it on the wrong setting gets poor matches and concludes the app is broken. Stop 3's
-clue now says so outright. Mix as built: 2 flower, 3 fruit, 3 leaf, 2 bark.
+clue now says so outright. Mix as built: 2 flower, 2 fruit, 4 leaf, 2 bark.
 
 | # | Plant | Photo | Role |
 |---|---|---|---|
@@ -100,11 +100,11 @@ clue now says so outright. Mix as built: 2 flower, 3 fruit, 3 leaf, 2 bark.
 | 3 | Roughleaf dogwood | flower | Flat white cluster, the contrast with sheet 1's ball |
 | 4 | Blackberry | leaf | Compatible near-miss |
 | 5 | Callery pear | fruit | **Stop 4's answer** — the little pears Johnny points at |
-| 6 | Eastern redcedar | fruit | Blue berries on scale foliage |
-| 7 | Black locust | bark | Deep ropy interlacing ridges |
+| 6 | Eastern redcedar | bark | Reddish fibrous bark peeling in strips, foliage in frame |
+| 7 | Black locust | leaf | Pinnate, rounded leaflets, isolated on white |
 | 8 | Tree of heaven | leaf | Pinnate with samaras |
 | 9 | Elderberry | leaf | **The decoy** — see below |
-| 10 | Common hackberry | bark | Corky warts, the classic bark ID |
+| 10 | Common hackberry | bark | Corky warts — **tested and confirmed in the app** |
 
 **Pages match each photo's orientation** so every print is as large as letter allows. Print at full
 size, no scaling.
@@ -125,9 +125,21 @@ they look again. Elderberry is the only decoy that passes silently.
 **Not on the wall:** osage orange and sweetgum. The library has no usable image for either — every
 osage file is the same dormant bud-and-thorn macro. Tree of heaven took osage's slot.
 
-**Testing.** Mike tested the earlier all-leaf wall in the app on 15 Sep and it identified every
-sheet. **The organ mix is newer than that test**, so re-check sheets 1, 2, 3, 5, 6, 7 and 10 — the
-flower, fruit and bark ones — before printing.
+**Bark is the fragile mode.** Black locust bark came back as **salt cedar** when Mike tested it —
+both are deeply furrowed reddish-brown, and that generic-furrow category is where the model struggles.
+Black locust moved back to its leaf (isolated on white, already confirmed), and the second bark is
+now **Eastern redcedar**, whose bark is fibrous and peels in strips, with cedar foliage in frame to
+give the model context. **Common hackberry bark is confirmed working.**
+
+If redcedar bark also fails, the next candidates in the library, best first: **eastern hop hornbeam**
+(fine shreddy strips, though it is a *compatible* species and not currently on the wall), **black
+cherry** (curling plates and lenticels), **silver maple** (shaggy plates), **tree of heaven**
+(smooth grey-green with pale striations). Avoid anything merely furrowed — American elm, Siberian
+elm, green ash and black locust all share the failure mode.
+
+**Testing status.** The all-leaf wall was confirmed in the app on 15 Sep. Since then the organ mix
+changed, so sheets **1, 2, 3, 5, 6** still need checking — flower, fruit and the new redcedar bark.
+Sheets 4, 7, 8, 9 (leaf) and 10 (bark) are confirmed.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
 
