@@ -85,12 +85,17 @@ Fragment order within a pair is the table order (first team's number goes first)
 
 ## 5. The plant wall
 
-**Every sheet is a close-up leaf** (bar sheet 2, the buttonbush flowerhead the clue names). Leaf
-shots are what a plant-ID app reads most reliably off paper, and several are isolated on white.
-**Pages are landscape or portrait to match the photo**, so each print is as big as letter allows.
-Confirmed the app can identify off a printed sheet; still spot-check each one.
+**Nine sheets, one plant each.** Sheet 1 is buttonbush's flowerhead because that is what stop 3's
+clue describes; every other sheet is a **close-up leaf**, which is what a plant-ID app reads most
+reliably off paper, several isolated on white. **Pages match the photo's orientation** so each print
+is as big as letter allows.
 
-- **Buttonbush** ×2 — the scan target. Sheet 1 is the leaf, **sheet 2 is the creamy white pincushion flowerhead the clue names**. (Max height 12 ft in its entry.)
+**Tested in the app 15 Sep — it identified every sheet**, with one wrinkle: roughleaf dogwood
+(sheet 3) often comes back as **red osier dogwood**. Harmless. Red osier is a wet-site shrub so a
+team might try it for stop 3, but its entry reads **120 in / 10 ft**, so the game rejects the answer
+and sends them back. Elderberry is the only decoy that passes silently.
+
+- **Buttonbush** — the scan target, sheet 1: the **creamy white pincushion flowerhead** the clue names. (Max height 12 ft in its entry.) A second buttonbush leaf sheet was dropped once the app proved it reads the flowerhead fine — one sheet per plant.
 - **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
 - Other compatibles as near-misses: **Blackberry**, **Roughleaf dogwood** (both on LUC's compatible list).
 - Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Tree of heaven**.
