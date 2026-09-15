@@ -137,9 +137,8 @@ cherry** (curling plates and lenticels), **silver maple** (shaggy plates), **tre
 (smooth grey-green with pale striations). Avoid anything merely furrowed — American elm, Siberian
 elm, green ash and black locust all share the failure mode.
 
-**Testing status.** The all-leaf wall was confirmed in the app on 15 Sep. Since then the organ mix
-changed, so sheets **1, 2, 3, 5, 6** still need checking — flower, fruit and the new redcedar bark.
-Sheets 4, 7, 8, 9 (leaf) and 10 (bark) are confirmed.
+**Testing status: ALL TEN SHEETS CONFIRMED IN THE APP** (Mike, 15 Sep) — every organ mode reads
+correctly off the printed sheet, redcedar bark included. The wall is done.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
 
