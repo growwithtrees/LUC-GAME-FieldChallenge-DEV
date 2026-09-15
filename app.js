@@ -6,7 +6,7 @@
 
   var TEAMS = {
     "Sumac":      { slug: "sumac",      color: "Red",    trainer: "Hannah", word: "corridor",   frag: "47" },
-    "Elderberry": { slug: "elderberry", color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
+    "Ironwood":   { slug: "ironwood",   color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
     "Bluestem":   { slug: "bluestem",   color: "Green",  trainer: "Hannah", word: "selective",  frag: "58" },
     "Hazelnut":   { slug: "hazelnut",   color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36" },
     "Ninebark":   { slug: "ninebark",   color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29" },
@@ -115,8 +115,8 @@
       },
       {
         icon: "ic-cam", feat: "Plant Identify · Scan", title: "Scan the wall, read the entry",
-        body: "Look at the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control, redcedar, black locust, hedge, sweetgum. Mixed in are a few compatible shrubs."
-          + "<br><br>You are after one compatible shrub with a telltale habit: it can sit in <b>standing water</b> and thrives in wet spots, swamps, stream banks, and lake shores. Point the app's <b>Identify</b> camera at the plants until you find that wetland shrub, then open its <b>Let Grow entry</b>."
+        body: "Look at the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control \u2014 redcedar, black locust, hedge, callery pear. Mixed in are compatible shrubs."
+          + "<br><br>You want one shrub in particular. It grows with its <b>feet in the water</b> \u2014 swamps, pond edges, ditches that never dry out \u2014 and it carries a flowerhead you cannot mistake: a <b>creamy white ball, like a pincushion</b>. Point the app\u2019s <b>Identify</b> camera at the plants until you find it, then open its <b>Let Grow entry</b>."
           + "<br><br>Read its height range and enter its <b>maximum height</b>, in feet.",
         accept: ["12", "144"]
       },
