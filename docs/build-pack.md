@@ -18,11 +18,11 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 | Elderberry | `/elderberry` | Red | 12 | Hannah | `COMPATIBLE` |
 | Bluestem | `/bluestem` | Green | 58 | Hannah | `SELECTIVE` |
 | Hazelnut | `/hazelnut` | Green | 36 | Hannah | `CLEARANCE` |
-| Ninebark | `/ninebark` | Blue | 29 | Hannah | `WIRE ZONE` |
-| Spicebush | `/spicebush` | Blue | 64 | Hannah | `BORDER ZONE` |
+| Ninebark | `/ninebark` | Blue | 29 | Hannah | `FOLIAR` |
+| Spicebush | `/spicebush` | Blue | 64 | Hannah | `BASAL` |
 | Pawpaw | `/pawpaw` | Amber | 81 | Hannah | `FLASHOVER` |
 | Redbud | `/redbud` | Amber | 53 | Hannah | `CONDUCTOR` |
-| Witchhazel | `/witchhazel` | Purple | 70 | Hannah | `LOW GROWING` |
+| Witchhazel | `/witchhazel` | Purple | 70 | Hannah | `SAPLING` |
 | Wahoo | `/wahoo` | Purple | 26 | Hannah | `ENCROACH` |
 
 **Box combos:** Red `4712` · Green `5836` · Blue `2964` · Amber `8153` · Purple `7026`.
@@ -54,9 +54,9 @@ Fragment order within a pair is the table order (first team's number goes first)
 **Hannah's card (print the table from §1 on the back):**
 > **Teams will message you `<TEAM NAME> CHECKING IN`.** Read the team name, find it on your card, reply with **that team's one word** and nothing else. Ten teams, ten messages. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
 >
-> `SUMAC`→CORRIDOR · `ELDERBERRY`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→WIRE ZONE · `SPICEBUSH`→BORDER ZONE · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→LOW GROWING · `WAHOO`→ENCROACH
+> `SUMAC`→CORRIDOR · `ELDERBERRY`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→FOLIAR · `SPICEBUSH`→BASAL · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→SAPLING · `WAHOO`→ENCROACH
 
-Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
+**Every reply word is a single word on purpose** — an earlier draft had WIRE ZONE / BORDER ZONE / LOW GROWING, and a space in Hannah's reply would have failed the match. The matcher is now spacing-tolerant either way, but keep the words single. Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
 
 > **Confirmed (Mike, 14 Sep): participants can message other people in the app**, so stop 1 works as designed. Hannah just needs to be watching her inbox during the icebreaker.
 

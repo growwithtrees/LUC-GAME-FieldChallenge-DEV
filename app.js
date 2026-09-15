@@ -9,11 +9,11 @@
     "Elderberry": { slug: "elderberry", color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
     "Bluestem":   { slug: "bluestem",   color: "Green",  trainer: "Hannah", word: "selective",  frag: "58" },
     "Hazelnut":   { slug: "hazelnut",   color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36" },
-    "Ninebark":   { slug: "ninebark",   color: "Blue",   trainer: "Hannah", word: "wirezone",   frag: "29" },
-    "Spicebush":  { slug: "spicebush",  color: "Blue",   trainer: "Hannah", word: "borderzone", frag: "64" },
+    "Ninebark":   { slug: "ninebark",   color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29" },
+    "Spicebush":  { slug: "spicebush",  color: "Blue",   trainer: "Hannah", word: "basal",      frag: "64" },
     "Pawpaw":     { slug: "pawpaw",     color: "Amber",  trainer: "Hannah", word: "flashover",  frag: "81" },
     "Redbud":     { slug: "redbud",     color: "Amber",  trainer: "Hannah", word: "conductor",  frag: "53" },
-    "Witchhazel": { slug: "witchhazel", color: "Purple", trainer: "Hannah", word: "lowgrowing", frag: "70" },
+    "Witchhazel": { slug: "witchhazel", color: "Purple", trainer: "Hannah", word: "sapling",    frag: "70" },
     "Wahoo":      { slug: "wahoo",      color: "Purple", trainer: "Hannah", word: "encroach",   frag: "26" }
   };
   var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
@@ -200,7 +200,11 @@
     var input = document.getElementById("codein");
     var val = norm(input.value);
     if (!val) return;
-    var ok = s.accept.some(function (a) { return val.indexOf(norm(a)) !== -1; });
+    var vns = val.replace(/ /g, "");
+    var ok = s.accept.some(function (a) {
+      var n = norm(a);
+      return val.indexOf(n) !== -1 || vns.indexOf(n.replace(/ /g, "")) !== -1;
+    });
     if (ok) { playUnlock(advance); }
     else {
       input.classList.remove("wrong"); void input.offsetWidth; input.classList.add("wrong");
