@@ -1,21 +1,22 @@
 /* Liberty ROW Field Guide Challenge
    Per-team page: set window.TEAM_ID before loading this file.
-   Teams are named for central-Missouri compatible species (not answers). */
+   Teams are plain numbers, so no name can ever collide with a puzzle answer. */
 (function () {
   "use strict";
 
   var TEAMS = {
-    "Sumac":      { slug: "sumac",      color: "Red",    trainer: "Hannah", word: "corridor",   frag: "47" },
-    "Ironwood":   { slug: "ironwood",   color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
-    "Bluestem":   { slug: "bluestem",   color: "Green",  trainer: "Hannah", word: "selective",  frag: "58" },
-    "Hazelnut":   { slug: "hazelnut",   color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36" },
-    "Ninebark":   { slug: "ninebark",   color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29" },
-    "Spicebush":  { slug: "spicebush",  color: "Blue",   trainer: "Hannah", word: "basal",      frag: "64" },
-    "Pawpaw":     { slug: "pawpaw",     color: "Amber",  trainer: "Hannah", word: "flashover",  frag: "81" },
-    "Redbud":     { slug: "redbud",     color: "Amber",  trainer: "Hannah", word: "conductor",  frag: "53" },
-    "Witchhazel": { slug: "witchhazel", color: "Purple", trainer: "Hannah", word: "sapling",    frag: "70" },
-    "Wahoo":      { slug: "wahoo",      color: "Purple", trainer: "Hannah", word: "encroach",   frag: "26" }
+    "1":  { slug: "team-1",  color: "Red",    trainer: "Hannah", word: "corridor",   frag: "47" },
+    "2":  { slug: "team-2",  color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
+    "3":  { slug: "team-3",  color: "Green",  trainer: "Hannah", word: "selective",  frag: "58" },
+    "4":  { slug: "team-4",  color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36" },
+    "5":  { slug: "team-5",  color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29" },
+    "6":  { slug: "team-6",  color: "Blue",   trainer: "Hannah", word: "basal",      frag: "64" },
+    "7":  { slug: "team-7",  color: "Amber",  trainer: "Hannah", word: "flashover",  frag: "81" },
+    "8":  { slug: "team-8",  color: "Amber",  trainer: "Hannah", word: "conductor",  frag: "53" },
+    "9":  { slug: "team-9",  color: "Purple", trainer: "Hannah", word: "sapling",    frag: "70" },
+    "10": { slug: "team-10", color: "Purple", trainer: "Hannah", word: "encroach",   frag: "26" }
   };
+
   var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
     + '<symbol id="ic-talk" viewBox="0 0 512 512"><path d="M488 348.78h-70.24l-15.1 87.44-48.78-87.44H169v-50h190v-157h129zm-145-273v207H158.13l-48.79 87.47-15.11-87.47H24v-207zM136.724 215.324c0-10.139-12.257-15.214-19.425-8.046-7.168 7.168-2.093 19.426 8.046 19.426 6.285 0 11.38-5.095 11.38-11.38zm60.945 0c-.068-10.12-12.32-15.122-19.452-7.943-7.131 7.18-2.047 19.399 8.073 19.399 6.314 0 11.422-5.141 11.38-11.456zm60.945 0c0-10.139-12.257-15.214-19.425-8.046-7.169 7.168-2.093 19.426 8.046 19.426 6.284 0 11.38-5.095 11.38-11.38z"/></symbol>'
     + '<symbol id="ic-search" viewBox="0 0 512 512"><path d="M333.78 20.188c-39.97 0-79.96 15.212-110.405 45.656-58.667 58.667-60.796 152.72-6.406 213.97l-15.782 15.748 13.25 13.25 15.75-15.78c61.248 54.39 155.3 52.26 213.968-6.407 60.887-60.886 60.888-159.894 0-220.78C413.713 35.4 373.753 20.187 333.78 20.187zm0 18.562c35.15 0 70.285 13.44 97.158 40.313 53.745 53.745 53.744 140.6 0 194.343-51.526 51.526-133.46 53.643-187.5 6.375l.218-.217c-2.35-2.05-4.668-4.17-6.906-6.407-2.207-2.206-4.288-4.496-6.313-6.812l-.218.22c-47.27-54.04-45.152-135.976 6.374-187.502C263.467 52.19 298.63 38.75 333.78 38.75zm-157 240.938L41.094 432.5l34.562 34.563L211.47 332.25l-34.564-34.563zM40 456.813L24 472.78 37.22 486l15.968-16L40 456.812z"/></symbol>'
@@ -98,7 +99,7 @@
       {
         icon: "ic-talk", feat: "Messages", title: "Radio the crew lead",
         body: "Open the Let Grow app and tap <b>Messages</b>. Find <b>" + t.trainer + "</b> in your list and send exactly this:"
-          + "<div class='sendblock'><div class='lbl'>Send this message</div><div class='msg'>" + team.toUpperCase() + " CHECKING IN</div></div>"
+          + "<div class='sendblock'><div class='lbl'>Send this message</div><div class='msg'>" + "TEAM " + team + " CHECKING IN</div></div>"
           + t.trainer + " will message you back a trail word for your team. Type it in below.",
         accept: [t.word]
       },

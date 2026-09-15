@@ -9,21 +9,21 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 ## 1. The app
 
 - Live: `https://growwithtrees.github.io/LUC-GAME-FieldChallenge-DEV/` · one page per team slug, opened by that team's QR code (no picker).
-- Each team is named for a central-Missouri **compatible** species that is never a puzzle answer.
+- Teams are plain **numbers**, 1 to 10. No name can collide with a puzzle answer, and every plant stays free for the wall.
 - Six stops, each a real Let Grow feature. Enter the code the app gives you, unlock the next stop. Finish → a 2-digit **fragment**; two same-color teams combine fragments into a 4-digit box combo.
 
 | Team | Slug | Box | Fragment | Trainer | Reply word |
 |---|---|---|---|---|---|
-| Sumac | `/sumac` | Red | 47 | Hannah | `CORRIDOR` |
-| Ironwood | `/ironwood` | Red | 12 | Hannah | `COMPATIBLE` |
-| Bluestem | `/bluestem` | Green | 58 | Hannah | `SELECTIVE` |
-| Hazelnut | `/hazelnut` | Green | 36 | Hannah | `CLEARANCE` |
-| Ninebark | `/ninebark` | Blue | 29 | Hannah | `FOLIAR` |
-| Spicebush | `/spicebush` | Blue | 64 | Hannah | `BASAL` |
-| Pawpaw | `/pawpaw` | Amber | 81 | Hannah | `FLASHOVER` |
-| Redbud | `/redbud` | Amber | 53 | Hannah | `CONDUCTOR` |
-| Witchhazel | `/witchhazel` | Purple | 70 | Hannah | `SAPLING` |
-| Wahoo | `/wahoo` | Purple | 26 | Hannah | `ENCROACH` |
+| Team 1 | `/team-1` | Red | 47 | Hannah | `CORRIDOR` |
+| Team 2 | `/team-2` | Red | 12 | Hannah | `COMPATIBLE` |
+| Team 3 | `/team-3` | Green | 58 | Hannah | `SELECTIVE` |
+| Team 4 | `/team-4` | Green | 36 | Hannah | `CLEARANCE` |
+| Team 5 | `/team-5` | Blue | 29 | Hannah | `FOLIAR` |
+| Team 6 | `/team-6` | Blue | 64 | Hannah | `BASAL` |
+| Team 7 | `/team-7` | Amber | 81 | Hannah | `FLASHOVER` |
+| Team 8 | `/team-8` | Amber | 53 | Hannah | `CONDUCTOR` |
+| Team 9 | `/team-9` | Purple | 70 | Hannah | `SAPLING` |
+| Team 10 | `/team-10` | Purple | 26 | Hannah | `ENCROACH` |
 
 **Box combos:** Red `4712` · Green `5836` · Blue `2964` · Amber `8153` · Purple `7026`.
 
@@ -35,7 +35,7 @@ Fragment order within a pair is the table order (first team's number goes first)
 
 ## 2. The six stops (content + answer)
 
-1. **Messages** — team opens Messages, finds their trainer, sends `<TEAM> CHECKING IN` (e.g. `SUMAC CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
+1. **Messages** — team opens Messages, finds their trainer, sends `TEAM <n> CHECKING IN` (e.g. `TEAM 3 CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
 2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `CORALBERRY`** (`BUCKBRUSH` and `INDIAN CURRANT` also accepted).
    > **CONFIRMED loaded — plant ids 143 (WZC-BZS) and 455 (WZS-BZS), filed as “Coralberry.”** Note LUC's own 26-species compatible list and the shipped *Ozark Buckbrush vs Multiflora Rose* Field Bite both call it **Buckbrush**, so crews may type the name their own training taught them. Both accepted; the facilitator should not correct anyone who says buckbrush.
 3. **Plant Identify / Scan** — on the plant wall, find the shrub that grows **with its feet in the water** and carries a **creamy white pincushion flowerhead** (buttonbush), scan it, open its entry, read its **max height**. **Answer = `12`** (`144` also accepted as a safety net). Reads real entry data, no planted code — see [design note](#7-design-notes).
@@ -52,9 +52,9 @@ Fragment order within a pair is the table order (first team's number goes first)
 **One trainer: Hannah.** All ten teams message the same person, so there is nothing to staff and nothing to brief beyond one card. Each team still gets its **own** reply word, and the team's name is right there in the message they send, so Hannah just reads the name and looks up the row.
 
 **Hannah's card (print the table from §1 on the back):**
-> **Teams will message you `<TEAM NAME> CHECKING IN`.** Read the team name, find it on your card, reply with **that team's one word** and nothing else. Ten teams, ten messages. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
+> **Teams will message you `TEAM 1 CHECKING IN`, `TEAM 2 CHECKING IN` and so on.** Read the number, find it on your card, reply with **that team's one word** and nothing else. Ten teams, ten messages. Wrong message? Reply: *"Say again — send me your team name and CHECKING IN."*
 >
-> `SUMAC`→CORRIDOR · `IRONWOOD`→COMPATIBLE · `BLUESTEM`→SELECTIVE · `HAZELNUT`→CLEARANCE · `NINEBARK`→FOLIAR · `SPICEBUSH`→BASAL · `PAWPAW`→FLASHOVER · `REDBUD`→CONDUCTOR · `WITCHHAZEL`→SAPLING · `WAHOO`→ENCROACH
+> `TEAM 1`→CORRIDOR · `TEAM 2`→COMPATIBLE · `TEAM 3`→SELECTIVE · `TEAM 4`→CLEARANCE · `TEAM 5`→FOLIAR · `TEAM 6`→BASAL · `TEAM 7`→FLASHOVER · `TEAM 8`→CONDUCTOR · `TEAM 9`→SAPLING · `TEAM 10`→ENCROACH
 
 **Every reply word is a single word on purpose** — an earlier draft had WIRE ZONE / BORDER ZONE / LOW GROWING, and a space in Hannah's reply would have failed the match. The matcher is now spacing-tolerant either way, but keep the words single. Per-team words are what stop one team shouting the answer across the room. **If ten lookups under pressure turns out to be too much on the day, the fallback is one shared word for everybody** — set every `word` in `app.js` to the same string and reprint the card. Swapping Hannah for Lindsey is a one-line find-and-replace in `app.js`.
 
@@ -91,10 +91,10 @@ Print laminated images. **Test that each IDs in the app before the event.**
 - **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
 - Other compatibles as near-misses: **Blackberry**, **Gray dogwood**.
 - Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Osage orange / hedge**, **Sweetgum**.
-- **Elderberry** — compatible near-miss, on the wall as of 15 Sep. The team formerly called Elderberry was renamed **Ironwood** to free the name up.
+- **Elderberry** — compatible near-miss, on the wall as of 15 Sep. Teams are numbered now, so no plant name is reserved.
   > **Know the hazard.** Elderberry's Plantdex entry is a clone of buttonbush's on every field stop 3 reads — same growth zone (WZD-BZS), same Opposite branching, same MEDIUM growth speed, **same 144 in / 12 ft max height**, same extra info. They differ only in name, Latin name and family. A team that scans elderberry instead of buttonbush therefore gets the right answer for the wrong reason, invisibly. That is why stop 3's clue leads on the **creamy white pincushion flowerhead** — which nothing else on the wall has — rather than on wet ground alone, since elderberry is also a moist-site shrub.
   > **Seven plants on LUC's list sit at 144 in** (False Indigo Bush, Elderberry, Hazelnut, Glossy Buckthorn, Japanese Knotweed, Mountain Pepperbush, Buttonbush). **Check any new wall plant against that list before it goes up.**
-- Team names must never be puzzle **answers**. Appearing on the wall as a distractor is fine.
+- Team names are numbers, so nothing on the wall can be mistaken for a team's own name.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
 
