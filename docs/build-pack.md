@@ -85,29 +85,51 @@ Fragment order within a pair is the table order (first team's number goes first)
 
 ## 5. The plant wall
 
-**Nine sheets, one plant each.** Sheet 1 is buttonbush's flowerhead because that is what stop 3's
-clue describes; every other sheet is a **close-up leaf**, which is what a plant-ID app reads most
-reliably off paper, several isolated on white. **Pages match the photo's orientation** so each print
-is as big as letter allows.
+**Ten sheets, one plant each, numbered but deliberately UNLABELLED** — naming them gives away stops
+3 and 4. The key is §3 of the facilitator sheet.
 
-**Tested in the app 15 Sep — it identified every sheet**, with one wrinkle: roughleaf dogwood
-(sheet 3) often comes back as **red osier dogwood**. Harmless. Red osier is a wet-site shrub so a
-team might try it for stop 3, but its entry reads **120 in / 10 ft**, so the game rejects the answer
-and sends them back. Elderberry is the only decoy that passes silently.
+**The photos are a deliberate mix of flower, fruit, leaf and bark.** Identify asks the learner which
+one they are photographing, and getting that selector right is the real skill the stop teaches — a
+team that leaves it on the wrong setting gets poor matches and concludes the app is broken. Stop 3's
+clue now says so outright. Mix as built: 2 flower, 3 fruit, 3 leaf, 2 bark.
 
-- **Buttonbush** — the scan target, sheet 1: the **creamy white pincushion flowerhead** the clue names. (Max height 12 ft in its entry.) A second buttonbush leaf sheet was dropped once the app proved it reads the flowerhead fine — one sheet per plant.
-- **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
-- Other compatibles as near-misses: **Blackberry**, **Roughleaf dogwood** (both on LUC's compatible list).
-- Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Tree of heaven**.
-  > **Osage orange was dropped.** Every osage image in the library is the same dormant bud-and-thorn macro — no leaf, no foliage, nothing an app can identify. Tree of heaven replaced it: a higher-value ROW invasive with a clean leaf-and-samara shot isolated on white. Sweetgum was dropped too; there is no image for it at all.
-- **Elderberry** — compatible near-miss, on the wall as of 15 Sep. Teams are numbered now, so no plant name is reserved.
-  > **Know the hazard.** Elderberry's Plantdex entry is a clone of buttonbush's on every field stop 3 reads — same growth zone (WZD-BZS), same Opposite branching, same MEDIUM growth speed, **same 144 in / 12 ft max height**, same extra info. They differ only in name, Latin name and family. A team that scans elderberry instead of buttonbush therefore gets the right answer for the wrong reason, invisibly. That is why stop 3's clue leads on the **creamy white pincushion flowerhead** — which nothing else on the wall has — rather than on wet ground alone, since elderberry is also a moist-site shrub.
-  > **Seven plants on LUC's list sit at 144 in** (False Indigo Bush, Elderberry, Hazelnut, Glossy Buckthorn, Japanese Knotweed, Mountain Pepperbush, Buttonbush). **Check any new wall plant against that list before it goes up.**
-- Team names are numbers, so nothing on the wall can be mistaken for a team's own name.
+| # | Plant | Photo | Role |
+|---|---|---|---|
+| 1 | Buttonbush | flower | **Stop 3's answer** — the creamy white pincushion ball the clue names |
+| 2 | Coralberry / buckbrush | fruit | Stop 2's answer — the coral-pink berries the clue names |
+| 3 | Roughleaf dogwood | flower | Flat white cluster, the contrast with sheet 1's ball |
+| 4 | Blackberry | leaf | Compatible near-miss |
+| 5 | Callery pear | fruit | **Stop 4's answer** — the little pears Johnny points at |
+| 6 | Eastern redcedar | fruit | Blue berries on scale foliage |
+| 7 | Black locust | bark | Deep ropy interlacing ridges |
+| 8 | Tree of heaven | leaf | Pinnate with samaras |
+| 9 | Elderberry | leaf | **The decoy** — see below |
+| 10 | Common hackberry | bark | Corky warts, the classic bark ID |
+
+**Pages match each photo's orientation** so every print is as large as letter allows. Print at full
+size, no scaling.
+
+**The elderberry hazard.** Its Plantdex entry is a clone of buttonbush's on every field stop 3 reads
+— same growth zone (WZD-BZS), same Opposite branching, same MEDIUM growth speed, **same 144 in /
+12 ft max height**. They differ only in name, Latin name and family, so there is no other field to
+read. A team that scans elderberry therefore clears stop 3 on the wrong plant, invisibly. That is why
+the clue leads on the **pincushion flowerhead**, which nothing else on the wall has.
+**Seven plants on LUC's list sit at 144 in** (False Indigo Bush, Elderberry, Hazelnut, Glossy
+Buckthorn, Japanese Knotweed, Mountain Pepperbush, Buttonbush) — check any new wall plant against
+that before it goes up.
+
+**Roughleaf dogwood reads as red osier dogwood** in the app. Harmless: red osier is also a wet-site
+shrub so a team may try it, but its entry is **120 in / 10 ft**, so the game rejects the answer and
+they look again. Elderberry is the only decoy that passes silently.
+
+**Not on the wall:** osage orange and sweetgum. The library has no usable image for either — every
+osage file is the same dormant bud-and-thorn macro. Tree of heaven took osage's slot.
+
+**Testing.** Mike tested the earlier all-leaf wall in the app on 15 Sep and it identified every
+sheet. **The organ mix is newer than that test**, so re-check sheets 1, 2, 3, 5, 6, 7 and 10 — the
+flower, fruit and bark ones — before printing.
 
 One shared wall serves all 10 teams (they photograph images, not each other).
-
----
 
 ## 6. Finale, physical setup, roles
 

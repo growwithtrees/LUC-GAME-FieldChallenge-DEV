@@ -117,7 +117,8 @@
       {
         icon: "ic-cam", feat: "Plant Identify · Scan", title: "Scan the wall, read the entry",
         body: "Look at the <b>plant wall</b>. Most of what is posted are incompatible trees a crew would control \u2014 redcedar, black locust, hedge, callery pear. Mixed in are compatible shrubs."
-          + "<br><br>You want one shrub in particular. It grows with its <b>feet in the water</b> \u2014 swamps, pond edges, ditches that never dry out \u2014 and it carries a flowerhead you cannot mistake: a <b>creamy white ball, like a pincushion</b>. Point the app\u2019s <b>Identify</b> camera at the plants until you find it, then open its <b>Let Grow entry</b>."
+          + "<br><br>The sheets are not all leaves \u2014 some are flowers, some fruit, some bark. <b>Identify asks you which one you are photographing.</b> Tell it the right one and it will name the plant; tell it the wrong one and it will struggle."
+          + "<br><br>You want one shrub in particular. It grows with its <b>feet in the water</b> \u2014 swamps, pond edges, ditches that never dry out \u2014 and it carries a flowerhead you cannot mistake: a <b>creamy white ball, like a pincushion</b>. Work the wall with <b>Identify</b> until you find it, then open its <b>Let Grow entry</b>."
           + "<br><br>Read its height range and enter its <b>maximum height</b>, in feet.",
         accept: ["12", "144"]
       },
