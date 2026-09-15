@@ -85,12 +85,16 @@ Fragment order within a pair is the table order (first team's number goes first)
 
 ## 5. The plant wall
 
-Print laminated images. **Test that each IDs in the app before the event.**
+**Every sheet is a close-up leaf** (bar sheet 2, the buttonbush flowerhead the clue names). Leaf
+shots are what a plant-ID app reads most reliably off paper, and several are isolated on white.
+**Pages are landscape or portrait to match the photo**, so each print is as big as letter allows.
+Confirmed the app can identify off a printed sheet; still spot-check each one.
 
-- **Buttonbush** — the scan target; must be the **only wetland / standing-water plant** on the wall so the trait clue is unique. (Max height 12 ft in its entry.)
+- **Buttonbush** ×2 — the scan target. Sheet 1 is the leaf, **sheet 2 is the creamy white pincushion flowerhead the clue names**. (Max height 12 ft in its entry.)
 - **Coralberry / Buckbrush** — the field-guide (search) answer. Filed in the app as **Coralberry**.
-- Other compatibles as near-misses: **Blackberry**, **Gray dogwood**.
-- Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Osage orange / hedge**, **Sweetgum**.
+- Other compatibles as near-misses: **Blackberry**, **Roughleaf dogwood** (both on LUC's compatible list).
+- Incompatible trees a crew controls: **Callery pear** (the Field Clip answer — it must be on the wall), **Eastern redcedar**, **Black locust**, **Tree of heaven**.
+  > **Osage orange was dropped.** Every osage image in the library is the same dormant bud-and-thorn macro — no leaf, no foliage, nothing an app can identify. Tree of heaven replaced it: a higher-value ROW invasive with a clean leaf-and-samara shot isolated on white. Sweetgum was dropped too; there is no image for it at all.
 - **Elderberry** — compatible near-miss, on the wall as of 15 Sep. Teams are numbered now, so no plant name is reserved.
   > **Know the hazard.** Elderberry's Plantdex entry is a clone of buttonbush's on every field stop 3 reads — same growth zone (WZD-BZS), same Opposite branching, same MEDIUM growth speed, **same 144 in / 12 ft max height**, same extra info. They differ only in name, Latin name and family. A team that scans elderberry instead of buttonbush therefore gets the right answer for the wrong reason, invisibly. That is why stop 3's clue leads on the **creamy white pincushion flowerhead** — which nothing else on the wall has — rather than on wet ground alone, since elderberry is also a moist-site shrub.
   > **Seven plants on LUC's list sit at 144 in** (False Indigo Bush, Elderberry, Hazelnut, Glossy Buckthorn, Japanese Knotweed, Mountain Pepperbush, Buttonbush). **Check any new wall plant against that list before it goes up.**
