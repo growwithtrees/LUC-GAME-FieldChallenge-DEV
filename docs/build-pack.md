@@ -187,10 +187,14 @@ One shared wall serves all 10 teams (they photograph images, not each other).
 
 **On us:**
 3. **Load the Field Bite into Field Bites in the app.** Repo is live: `growwithtrees/LUC-LG-FB-CompatibleSpecies-DEV` (private, like every other FB repo). Ship it as a **package**, not a paste — `./make-package.sh` builds the zip, and the app truncates pasted HTML at ~64 KB while this deck is ~60 KB standalone / 1.7 MB packaged.
-4. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL), the plant wall, Hannah's reply-word card, role cards.
+4. **Print:** 10 team QR cards (against the `growwithtrees.github.io` URL) · the 10-page plant wall · the facilitator sheet for Lindsey · **Hannah's own one-page card** (she gets that, NOT the facilitator sheet, which carries every answer) · **role cards, 3 up, printed 10× and cut** — one set per team. All built, in `$GWT Info/LUC/Projects/Field Guide Challenge/Deliverables/`.
 5. **Buy:** five combo locks + boxes; prizes. Poison-ivy soap and similar practical items were floated on the 8 Sep call.
 6. Callery pear **must** be on the wall (stop 4's answer). Buttonbush is the scan target — read the elderberry note in §5 before adding any other wet-site shrub.
 
 **Nothing is blocked on a Liberty answer any more.** Everything above is ours to do.
+
+**Before printing: walk one team through all six stops end to end.** Every piece has been verified on
+its own, but the whole chain has never been run, and stop 5 (the Mrs. Webb ChatTrain) has never been
+exercised in this configuration.
 
 **Closed:** ~~trainer names~~ (Hannah, all teams) · ~~can a participant message a trainer?~~ (yes, 14 Sep) · ~~redcedar clip must be shot~~ (Callery pear clip exists, verified it never names the tree) · ~~team count waits on headcount~~ (10 pages, handed out in colour pairs) · ~~are the plants in Plantdex?~~ (Coralberry 143/455 · Buttonbush 75/380 at 144 in = 12 ft) · ~~Mrs. Webb ChatTrain~~ (trainer 62, `https://chattrain.org/play/252ffb2cf73a`) · ~~Field Bite keyword~~ (`BIOLOGICAL CONTROL`).
