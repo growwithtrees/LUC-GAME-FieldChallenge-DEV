@@ -12,20 +12,26 @@ Companion to the app in this repo. The **app is the engine** (it gates the codes
 - Teams are plain **numbers**, 1 to 10. No name can collide with a puzzle answer, and every plant stays free for the wall.
 - Six stops, each a real Let Grow feature. Enter the code the app gives you, unlock the next stop. Finish → a 2-digit **fragment**; two same-color teams combine fragments into a 4-digit box combo.
 
-| Team | Slug | Box | Fragment | Trainer | Reply word |
-|---|---|---|---|---|---|
-| Team 1 | `/team-1` | Red | 47 | Hannah | `CORRIDOR` |
-| Team 2 | `/team-2` | Red | 12 | Hannah | `COMPATIBLE` |
-| Team 3 | `/team-3` | Green | 58 | Hannah | `SELECTIVE` |
-| Team 4 | `/team-4` | Green | 36 | Hannah | `CLEARANCE` |
-| Team 5 | `/team-5` | Blue | 29 | Hannah | `FOLIAR` |
-| Team 6 | `/team-6` | Blue | 64 | Hannah | `BASAL` |
-| Team 7 | `/team-7` | Amber | 81 | Hannah | `FLASHOVER` |
-| Team 8 | `/team-8` | Amber | 53 | Hannah | `CONDUCTOR` |
-| Team 9 | `/team-9` | Purple | 70 | Hannah | `SAPLING` |
-| Team 10 | `/team-10` | Purple | 26 | Hannah | `ENCROACH` |
+| Team | Slug | Box | Fragment | Trainer | Reply word | Starts at |
+|---|---|---|---|---|---|---|
+| Team 1 | `/team-1` | Red | 47 | Hannah | `CORRIDOR` | Messages |
+| Team 2 | `/team-2` | Red | 12 | Hannah | `COMPATIBLE` | Field Guide |
+| Team 3 | `/team-3` | Green | 58 | Hannah | `SELECTIVE` | Scan |
+| Team 4 | `/team-4` | Green | 36 | Hannah | `CLEARANCE` | Field Clips |
+| Team 5 | `/team-5` | Blue | 29 | Hannah | `FOLIAR` | ChatTrain |
+| Team 6 | `/team-6` | Blue | 64 | Hannah | `BASAL` | Field Bites |
+| Team 7 | `/team-7` | Amber | 81 | Hannah | `FLASHOVER` | Messages |
+| Team 8 | `/team-8` | Amber | 53 | Hannah | `CONDUCTOR` | Field Guide |
+| Team 9 | `/team-9` | Purple | 70 | Hannah | `SAPLING` | Scan |
+| Team 10 | `/team-10` | Purple | 26 | Hannah | `ENCROACH` | Field Clips |
 
 **Box combos:** Red `4712` · Green `5836` · Blue `2964` · Amber `8153` · Purple `7026`.
+
+**Every team walks all six stops, but each STARTS on a different one and wraps around.** Team 3 goes
+Scan → Field Clips → ChatTrain → Field Bites → Messages → Field Guide, and so on. The stops are
+independent puzzles, so order changes nothing about the answers — it only stops the whole room
+messaging Hannah in the same minute and then queueing at the plant wall together. With ten teams over
+six stops, two teams share each entry point. The `start` field in `app.js` sets it per team.
 
 **Team count does not depend on headcount.** All 10 pages are built. Hand the QR cards out **in colour pairs** — if the room only makes 7 or 8 teams, drop whole pairs (e.g. skip Purple and Amber) so every box still has exactly two teams. Anya's headcount only changes how many people stand behind each QR.
 
@@ -34,6 +40,8 @@ Fragment order within a pair is the table order (first team's number goes first)
 ---
 
 ## 2. The six stops (content + answer)
+
+**Numbered in canonical order, which is NOT the order most teams meet them** — see the staggered start above. Nothing here depends on order.
 
 1. **Messages** — team opens Messages, finds their trainer, sends `TEAM <n> CHECKING IN` (e.g. `TEAM 3 CHECKING IN`); trainer replies their word. **Answer = the trainer's word.**
 2. **Field Guide / Search** — clue only (low compatible shrub, coral-pink berry clusters, heavy deer browse). Search the field guide to name it. **Answer = `CORALBERRY`** (`BUCKBRUSH` and `INDIAN CURRANT` also accepted).

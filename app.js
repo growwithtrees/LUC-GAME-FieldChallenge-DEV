@@ -5,16 +5,16 @@
   "use strict";
 
   var TEAMS = {
-    "1":  { slug: "team-1",  color: "Red",    trainer: "Hannah", word: "corridor",   frag: "47" },
-    "2":  { slug: "team-2",  color: "Red",    trainer: "Hannah", word: "compatible", frag: "12" },
-    "3":  { slug: "team-3",  color: "Green",  trainer: "Hannah", word: "selective",  frag: "58" },
-    "4":  { slug: "team-4",  color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36" },
-    "5":  { slug: "team-5",  color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29" },
-    "6":  { slug: "team-6",  color: "Blue",   trainer: "Hannah", word: "basal",      frag: "64" },
-    "7":  { slug: "team-7",  color: "Amber",  trainer: "Hannah", word: "flashover",  frag: "81" },
-    "8":  { slug: "team-8",  color: "Amber",  trainer: "Hannah", word: "conductor",  frag: "53" },
-    "9":  { slug: "team-9",  color: "Purple", trainer: "Hannah", word: "sapling",    frag: "70" },
-    "10": { slug: "team-10", color: "Purple", trainer: "Hannah", word: "encroach",   frag: "26" }
+    "1":  { slug: "team-1",  color: "Red",    trainer: "Hannah", word: "corridor",   frag: "47", start: 0 },
+    "2":  { slug: "team-2",  color: "Red",    trainer: "Hannah", word: "compatible", frag: "12", start: 1 },
+    "3":  { slug: "team-3",  color: "Green",  trainer: "Hannah", word: "selective",  frag: "58", start: 2 },
+    "4":  { slug: "team-4",  color: "Green",  trainer: "Hannah", word: "clearance",  frag: "36", start: 3 },
+    "5":  { slug: "team-5",  color: "Blue",   trainer: "Hannah", word: "foliar",     frag: "29", start: 4 },
+    "6":  { slug: "team-6",  color: "Blue",   trainer: "Hannah", word: "basal",      frag: "64", start: 5 },
+    "7":  { slug: "team-7",  color: "Amber",  trainer: "Hannah", word: "flashover",  frag: "81", start: 0 },
+    "8":  { slug: "team-8",  color: "Amber",  trainer: "Hannah", word: "conductor",  frag: "53", start: 1 },
+    "9":  { slug: "team-9",  color: "Purple", trainer: "Hannah", word: "sapling",    frag: "70", start: 2 },
+    "10": { slug: "team-10", color: "Purple", trainer: "Hannah", word: "encroach",   frag: "26", start: 3 }
   };
 
   var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
@@ -138,11 +138,19 @@
       },
       {
         icon: "ic-note", feat: "Field Bites", title: "Finish the field bite",
-        body: "Last stop. Open <b>Field Bites</b> and work through the microlearning on compatible right-of-way plants."
+        body: "Open <b>Field Bites</b> and work through the microlearning on compatible right-of-way plants."
           + "<br><br>Read the cards and answer the checks all the way to the end. The <b>last card</b> gives you a keyword, enter it below for your box number.",
         accept: ["biological control", "biologicalcontrol"]
       }
     ];
+  }
+
+  // Every team walks all six stops, but each STARTS at a different one and wraps around.
+  // Without this the whole room messages Hannah in the same minute and then queues at the
+  // plant wall together. The stops are independent puzzles, so order does not matter.
+  function rotate(arr, by) {
+    by = ((by % arr.length) + arr.length) % arr.length;
+    return arr.slice(by).concat(arr.slice(0, by));
   }
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -270,7 +278,7 @@
     if (!team || !TEAMS[team]) { fail("This link is not set to a valid team. Check the QR code or the organizer hub."); return; }
     document.body.insertAdjacentHTML("afterbegin", SPRITE + SHELL);
     state.team = team;
-    state.stops = buildStops(team);
+    state.stops = rotate(buildStops(team), TEAMS[team].start || 0);
     var saved = load(team);
     state.stop = saved ? Math.min(saved.stop, state.stops.length) : 0;
     $("#beginBtn").addEventListener("click", function () {
