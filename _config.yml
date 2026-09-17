@@ -1,0 +1,40 @@
+# GitHub Pages build config.
+#
+# This repo is PRIVATE but its Pages site is PUBLIC. The growwithtrees org is on the Team
+# plan, where Pages access control is not available, so Pages serves EVERY tracked file at
+# a guessable URL whether or not anything links to it.
+#
+# Everything listed below therefore stays in the repo -- versioned and backed up -- but is
+# deliberately NOT copied into the published site.
+#
+# Add any new internal note, client-owned document or build script to this list BEFORE the
+# push that would publish it, then confirm it returns 404 on the live site.
+#
+# Do NOT add a .nojekyll file to this repo. It stops Jekyll entirely and silently turns
+# this exclude list into a no-op -- no warning, and the build still reports "built".
+
+exclude:
+  # Repo documentation, build notes, punchlists and review records. Ours, not client-facing.
+  - "*.md"
+
+  # Build and packaging tooling. Never loaded by a browser.
+  - "*.py"
+  - "*.sh"
+  - build
+  - tests
+
+  # Build intermediates and packaging manifests. The SCORM manifest lists source files and
+  # has no meaning to a browser.
+  - "*.clean.html"
+  - imsmanifest.xml
+  - ScormEnginePackageProperties.xsd
+
+  # Server-side source for the in-module review tool. It carries the notification address
+  # and the deployment runbook and is pasted into Apps Script by hand; the browser never
+  # loads it. review-mode.js is the CLIENT and must stay published.
+  - review-apps-script.js
+
+  # Authoring and debug tools -- nothing in the published module links to these.
+  - poi-editor.html
+  - zoom-debug.js
+  - .env.example
